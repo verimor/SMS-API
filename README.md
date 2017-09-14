@@ -1,3 +1,7 @@
+**TOPLU SMS API / ENTEGRASYON** 
+----
+SMS gönderimlerinizi web paneli üzerinden yapabildiğiniz gibi entegrasyon ile kendi yazılımız üzerinden de yapabilirsiniz. Entegrasyonla gönderim için aşağıdakı dökümanımızı inceleyiniz.
+
 **SMS API Dökümanı**
 ----
 
