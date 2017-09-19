@@ -1,5 +1,5 @@
 * [ASP](https://github.com/verimor/SMS-API/blob/master/sample_codes/asp.md)
-* [C#](https://github.com/verimor/SMS-API/blob/master/sample_codes/c#.md)
+* [C#](https://github.com/verimor/SMS-API/blob/master/sample_codes/c%23.md)
 * [JAVA](https://github.com/verimor/SMS-API/blob/master/sample_codes/java.md)
 * [PHP](https://github.com/verimor/SMS-API/blob/master/sample_codes/php.md)
 * [PYTHON](https://github.com/verimor/SMS-API/blob/master/sample_codes/python.md)
