@@ -1,6 +1,6 @@
 <?php
-//SMS API ile cok mesajın çok kişiye gönderimi örneği (PHP)
-//Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
+// SMS API ile cok mesajın çok kişiye gönderimi örneği (HTTP)
+// Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
 function sendSMS($source_addr, $messages){
   $campaign = array(
