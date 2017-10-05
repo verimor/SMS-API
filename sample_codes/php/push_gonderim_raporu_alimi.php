@@ -1,12 +1,11 @@
 <?php
-//SMS API ‘den PUSH gönderim raporu alımı örneği
-//Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
-
+// SMS API ‘den PUSH gönderim raporu alımı örneği
+// Bu dosyayı sunucunuza yerleştirip https://oim.verimor.com.tr/sms_settings/edit adresinden PUSH URL olarak ayarlayıp kullanabilirsiniz. 
 $request = file_get_contents("php://input");
 $json_request = json_decode($request);
  
 // print_r($json_request);
- 
+
 foreach($json_request as $message_status){
 	$campaign_id = $message_status->campaign_id; // 20210
 	$campaign_custom_id = $message_status->campaign_custom_id; // 1424441160.9331343
