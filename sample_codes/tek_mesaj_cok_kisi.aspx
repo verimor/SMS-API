@@ -1,7 +1,7 @@
+<%
 'SMS API ile tek mesajın çok kişiye gönderimi örneği
 'Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
-
-<% username = "xxxx" password = "xxxx" dest = "905321234567,905321234568" source_addr = "BASLIGIM" message = "Test Mesajıdır"
+username = "xxxx" password = "xxxx" dest = "905321234567,905321234568" source_addr = "BASLIGIM" message = "Test Mesajıdır"
 'json olusturuyoruz 
 jsonString = "{"&_ """username"":""908505322000""," &_ """password"":""aligel""," &_ """source_addr"":"""&source_addr&"""," &_ """messages"": [" &_ " { " &_ " ""msg"":"""&message&"""," &_ " ""dest"":"""&dest&"""" &_ " }" &_ " ]" &_ "}" 
 postUrl = "http://sms.verimor.com.tr/v2/send.json" 
