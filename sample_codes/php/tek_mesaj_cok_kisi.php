@@ -1,4 +1,4 @@
-//Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
+//SMS API ile tek mesajın çok kişiye gönderimi örneği (PHP)
 
 <?php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" => "xxxx",
     "password" => "xxxx",
