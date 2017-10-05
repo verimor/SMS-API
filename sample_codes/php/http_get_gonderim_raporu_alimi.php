@@ -1,6 +1,6 @@
 <?php
-//SMS API ‘den HTTP GET ile gönderim raporu alımı örneği
-//Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
+// SMS API ‘den HTTP GET ile gönderim raporu alımı örneği
+// Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
 function queryBatch($campaign_id="", $campaign_custom_id="", $dest="", $greater_than="")
 {
