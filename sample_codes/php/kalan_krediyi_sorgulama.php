@@ -1,6 +1,6 @@
 <?php
-//SMS API ile kalan krediyi sorgulama örneği (PHP)
-//Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
+// SMS API ile kalan krediyi sorgulama örneği (HTTP)
+// Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
 function queryCredits(){
   $username="xxxx";
