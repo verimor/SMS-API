@@ -1,6 +1,8 @@
+<?
 //SMS API ile tek mesajın çok kişiye gönderimi örneği (HTTPS)
 //Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
-<?php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" => "xxxx",
+
+php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" => "xxxx",
     "password" => "xxxx",
     "source_addr" => $header,
 //    "valid_for" => "48:00",
