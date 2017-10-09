@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -22,18 +23,39 @@ namespace WindowsFormsApplication1
         private void sendTB_Click(object sender, EventArgs e)
         {
             // NOT: Bu kod JSON.NET kütüphanesini kullanır. Şu adresten indirip proje referanslarına eklemelisiniz: http://www.newtonsoft.com/json
-            var sendMsg = new SmsIstegi();
-            sendMsg.username = kullaniciAdiTB.Text;
-            sendMsg.password = sifreTB.Text;
-            sendMsg.source_addr = baslikTB.Text;
-            sendMsg.messages = new Mesaj[] { new Mesaj(mesajTB.Text, telefonTB.Text) };
+            var smsIstegi = new SmsIstegi();
+            smsIstegi.username = kullaniciAdiTB.Text;
+            smsIstegi.password = sifreTB.Text;
+            smsIstegi.source_addr = baslikTB.Text;
+            smsIstegi.messages = new Mesaj[] { new Mesaj(mesajTB.Text, telefonTB.Text) };
+            IstegiGonder(smsIstegi);
+        }
 
-            string payload = JsonConvert.SerializeObject(sendMsg);
-            
+        private void IstegiGonder(SmsIstegi istek)
+        {
+            string payload = JsonConvert.SerializeObject(istek);
+
             WebClient wc = new WebClient();
             wc.Headers["Content-Type"] = "application/json";
-            string campaign_id = wc.UploadString("http://sms.verimor.com.tr/v2/send.json", payload);
-            MessageBox.Show("Mesaj gönderildi, kampanya id: " + campaign_id);
+
+            try
+            {
+                string campaign_id = wc.UploadString("http://sms.verimor.com.tr/v2/send.json", payload);
+                MessageBox.Show("Mesaj gönderildi, kampanya id: " + campaign_id);
+            }
+            catch (WebException ex) // 400 hatalarında response body'de hatanın ne olduğunu yakalıyoruz
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError) // 400 hataları
+                {
+                    var responseBody = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+                    MessageBox.Show("Mesaj gönderilemedi, dönen hata: " + responseBody);
+                }
+                else // diğer hatalar
+                {
+                    // MessageBox.Show("Mesaj gönderilemedi, dönen hata: " + ex.Status);
+                    throw;
+                }
+            }
         }
     }
 
