@@ -3,8 +3,8 @@
 // Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
 function queryCredits(){
-  $username="xxxx";
-  $password=urlencode("xxxx");
+  $username="xxxx"; // https://oim.verimor.com.tr/sms_settings/edit adresinden öğrenebilirsiniz.
+  $password=urlencode("xxxx"); // https://oim.verimor.com.tr/sms_settings/edit adresinden belirlemeniz gerekir.
   $url= "https://sms.verimor.com.tr/v2/balance?username=$username&password=$password";
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -15,10 +15,10 @@ function queryCredits(){
     echo "$http_code $http_response\n";
     return false;
   }
- 
+
   $balance = $http_response; // 4532
   echo "Mevcut krediniz: $balance";
   return $balance;
 }
- 
+
 queryCredits();

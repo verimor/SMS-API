@@ -1,4 +1,4 @@
-* [ASP](https://github.com/verimor/SMS-API/blob/master/sample_codes/tek_mesaj_cok_kisi.aspx)
+* [ASP](https://github.com/verimor/SMS-API/blob/master/sample_codes/tek_mesaj_cok_kisi.asp)
 * [C#](https://github.com/verimor/SMS-API/tree/master/sample_codes/C%23)
 * [JAVA](https://github.com/verimor/SMS-API/tree/master/sample_codes/java)
 * [PHP](https://github.com/verimor/SMS-API/tree/master/sample_codes/php)

@@ -2,9 +2,10 @@
 // SMS API ile tek mesajın çok kişiye gönderimi örneği (HTTPS)
 // Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
-php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" => "xxxx",
-    "password" => "xxxx",
-    "source_addr" => $header,
+php function sendSMS($header, $message, $phones){ $sms_msg = array(
+    "username" => "xxxx", // https://oim.verimor.com.tr/sms_settings/edit adresinden öğrenebilirsiniz.
+    "password" => "xxxx", // https://oim.verimor.com.tr/sms_settings/edit adresinden belirlemeniz gerekir.
+    "source_addr" => $header, // Gönderici başlığı, https://oim.verimor.com.tr/headers adresinde onaylanmış olmalı, değilse 400 hatası alırsınız.
 //    "valid_for" => "48:00",
 //    "send_at" => "2015-02-20 16:06:00",
 //    "datacoding" => "0",
@@ -26,11 +27,11 @@ php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" =
     ));
     $http_response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    
+
     if ($http_code == 200){
       return $http_response;
     }
- 
+
     if($http_code == 0){
       echo "HTTPS bağlantısı kurulamadı. Servis adresinin doğru olduğunu, php'nin network bağlantısı kurabildiğini ve sertifikalarınızın güncel olduğunu teyit edin.\n";
       echo "$http_code $http_response\n";
@@ -38,7 +39,7 @@ php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" =
       print_r( error_get_last());
       return false;
     }
- 
+
     if($http_code != 200){
       echo "$http_code $http_response\n";
       echo curl_error($ch)."\n";
@@ -46,15 +47,15 @@ php function sendSMS($header, $message, $phones){ $sms_msg = array( "username" =
       return false;
     }
 }
- 
+
 $source_addr = "BASLIGIM";
-$message = "Test mesajıdır";
+$message = "Test mesajıdır"; // Bu metin UTF8 olmalı, değilse 400 hatası alırsınız. Veritabanından alınan string'ler, veritabanı bağlantısının encoding'iyle gelir, UTF8 değilse çevirmeniz gerekir.
 $dest = "905321234567,905321234568";
- 
+
 $campaign_id = sendSMS($source_addr, $message, $dest);
 if($campaign_id === false)
   echo "Mesaj gonderme basarisiz.\n";
 else
   echo "Mesaj basariyla gonderildi. Kampanya ID'si: $campaign_id\n";
- 
+
 ?>
