@@ -345,3 +345,23 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-2:** Sadece (Ş ş Ğ ğ ç ı İ) harfleri Türkçe olarak kabul edilir ve datacoding=1 olarak gönderilmelidir. Diğer Türkçe karakterleri (Ö ö U ü Ç) datacoding=0 olarak gönderebilirsiniz. <br/>
 **Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için rapidssl.crt kök sertifika dosyasını buraya tıklayarak indirip sisteminize kurmalısınız.<br/>
 **Not-4:** API ile saniyede 1 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte saniyede 800.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 503 (Service Temporarily Unavailable) hatası döner.
+
+---
+**HTTP GET ile SMS BAŞLIKLARIM Listesi Alımı**
+---
+Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
+
+**Cevap (Başarılı):**
+```json
+HTTP/1.1 200 OK
+["Verimor TLK", "Bulutsantralim"]
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 401 Unauthorized
+Geçersiz kullanıcı adı/şifre
+```
