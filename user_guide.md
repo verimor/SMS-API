@@ -343,7 +343,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-1:** datacoding=0 veya datacoding=1 gönderimlerde aşağıdaki karakterler 2 karakter sayılır.
 ^ { } \ [ ] ~ | € <br/>
 **Not-2:** Sadece (Ş ş Ğ ğ ç ı İ) harfleri Türkçe olarak kabul edilir ve datacoding=1 olarak gönderilmelidir. Diğer Türkçe karakterleri (Ö ö U ü Ç) datacoding=0 olarak gönderebilirsiniz. <br/>
-**Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için rapidssl.crt kök sertifika dosyasını buraya tıklayarak indirip sisteminize kurmalısınız.<br/>
+**Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için rapidssl.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/rapidssl.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
 **Not-4:** API ile saniyede 1 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte saniyede 800.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
 
 ---
