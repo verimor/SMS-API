@@ -344,9 +344,18 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | 256     | EC_SM_DF_MEMORYCAPACITYEXCEEDED | Karşı abonenin telefon cihazında mesajı kaydedecek yer kalmadı |
 | 257     | EC_SM_DF_EQUIPMENTPROTOCOLERROR | Karşı operatör, abonenin telefon cihazında hata olduğunu bildirdi |
 | 258     | EC_SM_DF_EQUIPMENTNOTSM_EQUIPPED | Karşı operatör, abonenin telefon cihazında hata olduğunu bildirdi |
+| 500     | EC_PROVIDER_GENERAL_ERROR | Karşı operatör genel hata bildirdi |
 | 502     | EC_NO_RESPONSE | Mesaj karşı operatöre iletildi fakat olumlu veya olumsuz bir iletim raporu dönmedi |
+| 1030    | EC_OR_POTENTIALVERSIONINCOMPATIBILITY | Karşı operatör genel hata bildirdi |
 | 1155    | EC_NNR_SUBSYSTEMFAILURE | Karşı operatör, sistem hatasından dolayı abonesine ulaşamadığını bildirdi |
+| 1157    | EC_NNR_MTPFAILURE | Karşı operatör genel hata bildirdi |
+| 1281    | EC_UA_USERSPECIFICREASON | Karşı operatör genel hata bildirdi |
+| 1536    | EC_PA_PROVIDERMALFUNCTION | Karşı operatör genel hata bildirdi |
+| 2048    | EC_TIME_OUT | Mesaj karşı operatöre geçerlilik süresi içinde iletilemedi |
 | 2049    | EC_IMSI_BLACKLISTED | Karşı abonenin SIM kartı operatörünün karalistesinde |
+| 2050    | EC_DEST_ADDRESS_BLACKLISTED | Numara karşı operatörün karalistesinde olduğu için iletilemedi |
+| 2051    | EC_INVALIDMSCADDRESS | Mesaj metni karşı operatörün karalistesinde olduğu için iletilemedi |
+| 2053    | EC_BLACKLISTED_SENDERADDRESS | Mesaj başlığının kullanımı için ek onay alınması gerekli |
 | 4100    | EC_MESSAGE_CANCELED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
 | 4101    | EC_VALIDITYEXPIRED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
 | 4103    | EC_DESTINATION_FLOODING | Karşıdaki abone çok fazla mesaj almış olduğu için yeni mesaj kabul etmiyor |
