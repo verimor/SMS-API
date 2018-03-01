@@ -353,8 +353,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | 1536    | EC_PA_PROVIDERMALFUNCTION | Karşı operatör genel hata bildirdi |
 | 2048    | EC_TIME_OUT | Mesaj karşı operatöre geçerlilik süresi içinde iletilemedi |
 | 2049    | EC_IMSI_BLACKLISTED | Karşı abonenin SIM kartı operatörünün karalistesinde |
-| 2050    | EC_DEST_ADDRESS_BLACKLISTED | Numara karşı operatörün karalistesinde olduğu için iletilemedi |
-| 2051    | EC_INVALIDMSCADDRESS | Mesaj metni karşı operatörün karalistesinde olduğu için iletilemedi |
+| 2050    | EC_DEST_ADDRESS_BLACKLISTED | Numara karalistemizde olduğu için iletilemedi |
+| 2051    | EC_INVALIDMSCADDRESS | Mesaj metni karalistemizde olduğu için iletilemedi |
 | 2053    | EC_BLACKLISTED_SENDERADDRESS | Mesaj başlığının kullanımı için ek onay alınması gerekli |
 | 4100    | EC_MESSAGE_CANCELED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
 | 4101    | EC_VALIDITYEXPIRED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
