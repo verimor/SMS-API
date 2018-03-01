@@ -328,6 +328,30 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Gönderim Hatası       | SEND_ERROR                      | Mesajınız gönderilirken hata oluştu. (Sebebi çeşitli olabilir.)                                                             |
 | Mükerrer Gönderim     | INTERNATIONAL_DENIED            | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                      |
 
+**Mesaj Hata Kodları (gsm_error)**
+İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
+
+| Hata No | Hata Kodu             | Açıklama                                       |
+|---------|-----------------------|------------------------------------------------|
+| 1       | EC_UNKNOWN_SUBSCRIBER | Numara karşı operatörün veritabanında bir aboneye tanımlı değil |
+| 6       | EC_ABSENT_SUBSCRIBER_SM | Karşı aboneden sinyal alınamadı. Abonenin telefonunun kapalı olduğu durumda veya sinyalin zayıf olduğu durumda görülür |
+| 11      | EC_TELESERVICE_NOT_PROVISIONED | Karşı abonenin mobil hizmeti operatörü tarafından durduruldu |
+| 13      | EC_CALL_BARRED | Karşı abone 'Rahatsız Etme' (DND) hizmetini açtı, hiç mesaj almamayı tercih etti |
+| 27      | EC_ABSENT_SUBSCRIBER | Karşı abone çevrimiçi değil, telefon cihazı tarafından teyit edildi. Telefon kapatılınca görülür. |
+| 31      | EC_SUBSCRIBER_BUSY_FOR_MT_SMS | Karşı operatör fazla trafikten dolayı meşgul olduğunu bildirdi |
+| 32      | EC_SM_DELIVERY_FAILURE | Karşı operatör kısa mesajı abonesine iletemediğini bildirdi |
+| 34      | EC_SYSTEM_FAILURE | Karşı operatör sistem hatası bildirdi |
+| 256     | EC_SM_DF_MEMORYCAPACITYEXCEEDED | Karşı abonenin telefon cihazında mesajı kaydedecek yer kalmadı |
+| 257     | EC_SM_DF_EQUIPMENTPROTOCOLERROR | Karşı operatör, abonenin telefon cihazında hata olduğunu bildirdi |
+| 258     | EC_SM_DF_EQUIPMENTNOTSM_EQUIPPED | Karşı operatör, abonenin telefon cihazında hata olduğunu bildirdi |
+| 502     | EC_NO_RESPONSE | Mesaj karşı operatöre iletildi fakat olumlu veya olumsuz bir iletim raporu dönmedi |
+| 1155    | EC_NNR_SUBSYSTEMFAILURE | Karşı operatör, sistem hatasından dolayı abonesine ulaşamadığını bildirdi |
+| 2049    | EC_IMSI_BLACKLISTED | Karşı abonenin SIM kartı operatörünün karalistesinde |
+| 4100    | EC_MESSAGE_CANCELED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
+| 4101    | EC_VALIDITYEXPIRED | Karşı operatör mesajı abonesine geçerlilik süresi içinde iletemedi |
+| 4103    | EC_DESTINATION_FLOODING | Karşıdaki abone çok fazla mesaj almış olduğu için yeni mesaj kabul etmiyor |
+| 4104    | EC_DESTINATION_TXT_FLOODING | Karşıdaki aboneye aynı mesaj çok defa gönderilmiş olduğu için yeni mesaj kabul etmiyor |
+
 **SMS Boy Karakter Limitleri**
 
 |      | Normal (datacoding=0) | Türkçe (datacoding=1) | Unicode (datacoding=2) |
