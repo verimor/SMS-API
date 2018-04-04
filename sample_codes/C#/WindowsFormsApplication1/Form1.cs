@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
             string payload = JsonConvert.SerializeObject(istek);
 
             WebClient wc = new WebClient();
+            wc.Encoding = Encoding.UTF8;
             wc.Headers["Content-Type"] = "application/json";
 
             try
