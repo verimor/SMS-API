@@ -1,14 +1,15 @@
+----
 **SMS API Dökümanı**
 ----
-
 Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
 
 Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 1- Verimor hesabınızın kullanıcı adı (12 haneli telefon numaranız, 908501234567 gibi) <br/>
 2- API şifreniz ([OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) tanımlayabilirsiniz). Aynı zamanda bu menüden API erişiminizi sadece belirli IP adresine kısıtlayarak hesap güvenliğinizi de arttırabilirsiniz.
 
+----
 **SMS GÖNDERİMİ**
-
+----
 Smsapi gönderim için iki yöntemi destekler. Bunlar **HTTP(S) GET** (Plain de denir) ve **HTTP(S) POST JSON**’dır. İkisi de cevabını düz metin olarak döndürür.
 
 **HTTP GET ile SMS Gönderimi**
@@ -81,6 +82,7 @@ Accept: */*
 HTTP/1.1 200 OK
 20212
 ```
+
 ----
 **GÖNDERİM RAPORU ALIMI**
 ----
@@ -208,8 +210,10 @@ Bu kampanya size ait değil
 HTTP/1.1 404 Not Found
 Bu idye sahip kampanya bulunamadı
 ```
+
 ----
-**GELEN SMS ALIMI**<br/>
+**GELEN SMS ALIMI**
+----
 Smsapi hesabınıza gelen sms’leri iki farklı yöntemle teslim edebilir. Bunlar PUSH ve GET yöntemleridir.
 
 **PUSH ile Gelen SMS Alımı** <br/>
@@ -289,9 +293,30 @@ HTTP/1.1 200 OK
 HTTP/1.1 200 OK
 []
 ```
-----
 
+---
+**HTTP GET ile SMS BAŞLIKLARIM Listesi Alımı**
+---
+Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
+
+**Cevap (Başarılı):**
+```json
+HTTP/1.1 200 OK
+["Verimor TLK", "Bulutsantralim"]
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 401 Unauthorized
+Geçersiz kullanıcı adı/şifre
+```
+
+----
 **DURUM MESAJLARI**
+----
 SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında aşağıdaki tablodaki değerler olabilir:
 
 **Mesaj Gönderirken Dönebilecek Durumlar ve Açıklamaları**
@@ -378,23 +403,3 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-2:** Sadece (Ş ş Ğ ğ ç ı İ) harfleri Türkçe olarak kabul edilir ve datacoding=1 olarak gönderilmelidir. Diğer Türkçe karakterleri (Ö ö U ü Ç) datacoding=0 olarak gönderebilirsiniz. <br/>
 **Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için rapidssl.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/rapidssl.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
 **Not-4:** API ile dakikada 100 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 80.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
-
----
-**HTTP GET ile SMS BAŞLIKLARIM Listesi Alımı**
----
-Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
-
-**Örnek:**
->http://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
-
-**Cevap (Başarılı):**
-```json
-HTTP/1.1 200 OK
-["Verimor TLK", "Bulutsantralim"]
-```
-
-**Cevap (Başarısız):**
-```json
-HTTP/1.1 401 Unauthorized
-Geçersiz kullanıcı adı/şifre
-```
