@@ -25,7 +25,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * msg: Gönderilecek mesaj. Türkçe harf içerebilir. Maksimum uzunluğu Türkçe harf içeriyorsa 1043, içermiyorsa 1071 karakter’dir. (zorunlu). Encoding her zaman UTF8 beklenir.
 * dest: Mesajın gönderileceği telefon numaraları. Birden fazla numara varsa virgül ile ayrılmalıdır. (zorunlu)
 * valid_for: Mesajın geçerlilik süresi. SS:DD (veya S:DD) formatında olmalı. (Varsayılan değer 24:00, Minumum değer 00:01, Maksimum değer 48:00)
-* datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde bu parametrenin kullanılmaması gerekmektedir.
+* datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
 
 **Cevap (Başarılı):**
 ```json
