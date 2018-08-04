@@ -351,7 +351,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Geçersiz Şebeke       | ROUTE_NOT_AVAILABLE             | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Geçersiz Şebeke       | NETWORK_NOTCOVERED              | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Gönderim Hatası       | SEND_ERROR                      | Mesajınız gönderilirken hata oluştu. (Sebebi çeşitli olabilir.)                                                             |
-| Mükerrer Gönderim     | INTERNATIONAL_DENIED            | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                      |
+| Mükerrer Gönderim     | INTERNATIONAL_DENIED            | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                    |
+| Yasaklı içerik        | FORBIDDEN_MESSAGE                | Mesajınız yasak kelime(ler) içeriyor.                                                                                    |
 
 **Mesaj Hata Kodları (gsm_error)**
 İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
