@@ -1,7 +1,7 @@
 ----
 **SMS API Dökümanı**
 ----
-Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
+Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, ileri tarihli gönderimin nasıl iptal edileceğini, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
 
 Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 1- Verimor hesabınızın kullanıcı adı (12 haneli telefon numaranız, 908501234567 gibi) <br/>
@@ -82,8 +82,34 @@ Accept: */*
 HTTP/1.1 200 OK
 20212
 ```
-
 ----
+**İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ**
+----
+İleri tarihli mesaj gönderimini iptal etmek için aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
+
+```json
+POST http://sms.verimor.com.tr/v2/cancel/20121
+Host: sms.verimor.com.tr
+Content-Type: application/json
+Accept: */*
+ 
+{
+  "username"    : "908501234567",
+  "password"    : "xxxxxxx",
+}
+```
+**Cevap (Başarılı):**
+```json
+HTTP/1.1 200 OK
+Kampanya silindi: 20121
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 400 Bad Request
+Kampanya bulunamadı: 20121
+```
+
 **GÖNDERİM RAPORU ALIMI**
 ----
 Smsapi gönderim raporlarını iki şekilde teslim eder. Bunlar PUSH ve GET yöntemleridir.
