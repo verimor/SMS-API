@@ -95,7 +95,7 @@ Accept: */*
  
 {
   "username"    : "908501234567",
-  "password"    : "xxxxxxx",
+  "password"    : "xxxxxxx"
 }
 ```
 **Cevap (Başarılı):**
