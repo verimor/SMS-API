@@ -109,7 +109,7 @@ Kampanya silindi: 20121
 HTTP/1.1 400 Bad Request
 Kampanya bulunamadı: 20121
 ```
-
+----
 **GÖNDERİM RAPORU ALIMI**
 ----
 Smsapi gönderim raporlarını iki şekilde teslim eder. Bunlar PUSH ve GET yöntemleridir.
