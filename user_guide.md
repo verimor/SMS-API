@@ -23,7 +23,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * password: API şifreniz. (zorunlu)
 * source_addr: Gönderici kimliği (Başlık). Source_addr boş ise sistemde kayıtlı ilk başlığınız kullanılır.
 * msg: Gönderilecek mesaj. Türkçe harf içerebilir. Maksimum uzunluğu Türkçe harf içeriyorsa 1043, içermiyorsa 1071 karakter’dir. (zorunlu). Encoding her zaman UTF8 beklenir.
-* dest: Mesajın gönderileceği telefon numaraları. Birden fazla numara varsa virgül ile ayrılmalıdır. (zorunlu)
+* dest: Mesajın gönderileceği telefon numaraları. Birden fazla numara varsa virgül ile ayrılmalıdır. Yurt dışı numaralarının başına 00 eklenmelidir. Örnek: 0049xxxxxxxx. (zorunlu)
 * valid_for: Mesajın geçerlilik süresi. SS:DD (veya S:DD) formatında olmalı. (Varsayılan değer 24:00, Minumum değer 00:01, Maksimum değer 48:00)
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
 
@@ -159,7 +159,7 @@ Accept: */*
 * direction: Mesajın yönüdür. Gönderilen sms olduğu için outbound
 * campaign_custom_id: Mesajın kampanyasına sizin tarafınızdan verilmiş özel ID.
 * message_id: Mesaja API tarafından verilmiş ID.
-* dest: Mesajın gönderildiği telefon numarası.
+* dest: Mesajın gönderildiği telefon numarası. Yurt dışı numaralarının başına 00 eklenmelidir. Örnek: 0049xxxxxxxx.
 * size: Mesajın boyu.
 * international_multiplier: Mesajın kredi çarpanı (bir boyunun kaç krediye denk geldiği). Uluslararası mesajlarda 1’den büyük olur. Ulusal mesajlarda daima 1 olur.
 * credits: Bu mesaj için hesabınızdan kaç kredi düşüldüğü.
