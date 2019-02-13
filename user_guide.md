@@ -116,7 +116,7 @@ Smsapi gönderim raporlarını iki şekilde teslim eder. Bunlar PUSH ve GET yön
 
 **PUSH ile Gönderim Raporu Alımı**
 
-Push yönteminde mesajın durumu ile ilgili bilgi (teslim edildi, zaman aşımı, numara hatalı vb.) alınır alınmaz [OİM üzerinden](https://oim.verimor.com.tr) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
+Push yönteminde mesajın durumu ile ilgili bilgi (teslim edildi, zaman aşımı, numara hatalı vb.) alınır alınmaz [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
 ```json
 POST http://sizin.adresiniz.com.tr/sms_push
 Host: sizin.adresiniz.com.tr
@@ -243,7 +243,7 @@ Bu idye sahip kampanya bulunamadı
 Smsapi hesabınıza gelen sms’leri iki farklı yöntemle teslim edebilir. Bunlar PUSH ve GET yöntemleridir.
 
 **PUSH ile Gelen SMS Alımı** <br/>
-Push yönteminde hesabınıza bir mesaj gelir gelmez [OİM üzerinden](https://oim.verimor.com.tr) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
+Push yönteminde hesabınıza bir mesaj gelir gelmez [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
 ```json
 POST http://sizin.adresiniz.com.tr/sms_push
 Host: sizin.adresiniz.com.tr
@@ -268,7 +268,7 @@ Accept: */*
 * network: Mesajı gönderen operatör. TURKCELL, AVEA, VODAFONE-TR değerleri olabilir.
 * source_addr: Mesajı gönderen numara
 * destination_addr: Mesajın gönderildiği numara (Verimor abone numarası veya 4 haneli Verimor ücretsiz kısa numarası)
-* keyword: Ortak kullanımlı kısa numaralardaki ayırt edici anahtar kelime
+* keyword: Ortak kullanımlı kısa numaralardaki ayırt edici anahtar kelime. Kısa numaraya değil doğrudan sizin numaranıza gelen sms'lerde boş olur.
 * content: Gelen mesajın tam içeriği
 
 **Not:** API, sisteminize PUSH bildirimi yaptığında “HTTP/1.1 200 OK” cevabı bekler. Bu cevabı alamadığı zaman 5’er dakika bekleyerek 3 kere daha dener. Hala cevap alamazsa bu mesajı tekrar bildirmez.
@@ -308,9 +308,9 @@ HTTP/1.1 200 OK
   "received_at"      : "2017-01-01T10:00:00.000+03:00",
   "network"          : "VODAFONE-TR",
   "source_addr"      : "905444876543",
-  "destination_addr" : "4609",
-  "keyword"          : "verimor",
-  "content"          : "verimor test"
+  "destination_addr" : "908505320123",
+  "keyword"          : "",
+  "content"          : "1234 numaralı siparişim kargoya verildi mi?"
  }
 ]
 ```
