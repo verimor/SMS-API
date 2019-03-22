@@ -257,15 +257,15 @@ Accept: */*
   "received_at"      : "2017-01-01 09:00:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905319876543",
-  "destination_addr" : "4609",
-  "keyword"          : "verimor",
+  "destination_addr" : "908501234567",
+  "keyword"          : "",
   "content"          : "verimor deneme"
  }
 ]
 ```
 * direction: Mesajın yönüdür. Gelen sms olduğu için inbound
 * received_at: Mesajın alındığı tarih saat
-* network: Mesajı gönderen operatör. TURKCELL, AVEA, VODAFONE-TR değerleri olabilir.
+* network: Mesajı gönderen operatör. TURKCELL, TTMOBIL, VODAFONE değerleri olabilir.
 * source_addr: Mesajı gönderen numara
 * destination_addr: Mesajın gönderildiği numara (Verimor abone numarası veya 4 haneli Verimor ücretsiz kısa numarası)
 * keyword: Ortak kullanımlı kısa numaralardaki ayırt edici anahtar kelime. Kısa numaraya değil doğrudan sizin numaranıza gelen sms'lerde boş olur.
@@ -306,9 +306,9 @@ HTTP/1.1 200 OK
   "message_id"       : 1235,
   "direction"        : "inbound",
   "received_at"      : "2017-01-01T10:00:00.000+03:00",
-  "network"          : "VODAFONE-TR",
+  "network"          : "VODAFONE",
   "source_addr"      : "905444876543",
-  "destination_addr" : "908505320123",
+  "destination_addr" : "908501234567",
   "keyword"          : "",
   "content"          : "1234 numaralı siparişim kargoya verildi mi?"
  }
