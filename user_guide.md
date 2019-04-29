@@ -64,6 +64,7 @@ Accept: */*
                { 
                 "msg" : "deneme123",
                 "dest": "905311234567,905319876543"
+                "id"  : "1234,1235"
                }
               ]
 }
@@ -76,6 +77,7 @@ Accept: */*
 * custom_id: Bu kampanyaya verebileceğiniz özel ID’dir. API’nin kampanyaya döndüreceği ID’yi kullanmayıp kendi vereceğiniz ID ile mesajların sonucu takip etmek isterseniz kullanılır. (Push veya GET ile Gönderim Raporu alırken bu ID’yi kullanabilirsiniz.)(zorunlu değil)
 * msg: Gönderilecek mesaj. Türkçe harf içerebilir. Maksimum uzunluğu Türkçe harf içeriyorsa 1043, içermiyorsa 1071 karakter’dir. (zorunlu). Encoding her zaman UTF8 beklenir.
 * dest: Mesajın gönderileceği telefon numaraları. Birden fazla numara varsa virgül ile ayrılmalıdır. (zorunlu)
+* id: Kampanyanın içindeki mesajlara verebileceğiniz özel ID'lerdir. Push ile gönderim raporu alırken bu ID'yi kullanabilirsiniz. "dest" parametresinde birden fazla numara varsa, o kadar id verilmelidir, yoksa bu parametre dikkate alınmaz.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde bu parametrenin kullanılmaması gerekmektedir.
 
 **Cevap:**
@@ -130,6 +132,7 @@ Accept: */*
   "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582302",
+  "message_custom_id"        : "1234",
   "dest"                     : "905319876543",
   "size"                     : 1,
   "international_multiplier" : 1,
@@ -145,6 +148,7 @@ Accept: */*
   "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582303",
+  "message_custom_id"        : "1235",
   "dest"                     : "905319876544",
   "size"                     : 1,
   "international_multiplier" : 1,
@@ -160,6 +164,7 @@ Accept: */*
 * direction: Mesajın yönüdür. Gönderilen sms olduğu için outbound
 * campaign_custom_id: Mesajın kampanyasına sizin tarafınızdan verilmiş özel ID.
 * message_id: Mesaja API tarafından verilmiş ID.
+* message_custom_id: Mesaja sizin tarafınızdan verilmiş özel ID.
 * dest: Mesajın gönderildiği telefon numarası. Yurt dışı numaralarının başına 00 eklenmelidir. Örnek: 0049xxxxxxxx.
 * size: Mesajın boyu.
 * international_multiplier: Mesajın kredi çarpanı (bir boyunun kaç krediye denk geldiği). Uluslararası mesajlarda 1’den büyük olur. Ulusal mesajlarda daima 1 olur.
@@ -201,6 +206,7 @@ HTTP/1.1 200 OK
   "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582302",
+  "message_custom_id"        : "1234",
   "dest"                     : "905319876543",
   "size"                     : 1,
   "international_multiplier" : 1,
@@ -216,6 +222,7 @@ HTTP/1.1 200 OK
   "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582303",
+  "message_custom_id"        : "1235",
   "dest"                     : "905319876544",
   "size"                     : 1,
   "international_multiplier" : 1,
