@@ -128,8 +128,8 @@ Accept: */*
  
 [
  {
+  "type"                     : "outbound",
   "campaign_id"              : 20121,
-  "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582302",
   "message_custom_id"        : "1234",
@@ -144,8 +144,8 @@ Accept: */*
  }
  ,
  {
+  "type"                     : "outbound",
   "campaign_id"              : 20121,
-  "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582303",
   "message_custom_id"        : "1235",
@@ -161,7 +161,7 @@ Accept: */*
 ]
 ```
 * campaign_id: Mesajın kampanya ID’si.
-* direction: Mesajın yönüdür. Gönderilen sms olduğu için outbound
+* type: Mesajın yönüdür. Gönderilen sms olduğu için outbound
 * campaign_custom_id: Mesajın kampanyasına sizin tarafınızdan verilmiş özel ID.
 * message_id: Mesaja API tarafından verilmiş ID.
 * message_custom_id: Mesaja sizin tarafınızdan verilmiş özel ID.
@@ -203,7 +203,6 @@ HTTP/1.1 200 OK
 [
  {
   "campaign_id"              : 20121,
-  "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582302",
   "message_custom_id"        : "1234",
@@ -219,7 +218,6 @@ HTTP/1.1 200 OK
  ,
  {
   "campaign_id"              : 20121,
-  "direction"                : "outbound",
   "campaign_custom_id"       : "123456789",
   "message_id"               : "13582303",
   "message_custom_id"        : "1235",
@@ -261,7 +259,7 @@ Accept: */*
 [
  {
   "message_id"       : 1234,
-  "direction"        : "inbound",
+  "type"        : "inbound",
   "received_at"      : "2017-01-01 09:00:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905319876543",
@@ -271,7 +269,7 @@ Accept: */*
  }
 ]
 ```
-* direction: Mesajın yönüdür. Gelen sms olduğu için inbound
+* type: Mesajın yönüdür. Gelen sms olduğu için inbound
 * received_at: Mesajın alındığı tarih saat
 * network: Mesajı gönderen operatör. TURKCELL, TTMOBIL, VODAFONE değerleri olabilir.
 * source_addr: Mesajı gönderen numara
@@ -301,7 +299,6 @@ HTTP/1.1 200 OK
 [
  {
   "message_id"       : 1234,
-  "direction"        : "inbound",
   "received_at"      : "2017-01-01T09:00:00.000+03:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905335876543",
@@ -312,7 +309,6 @@ HTTP/1.1 200 OK
 ,
  {
   "message_id"       : 1235,
-  "direction"        : "inbound",
   "received_at"      : "2017-01-01T10:00:00.000+03:00",
   "network"          : "VODAFONE",
   "source_addr"      : "905444876543",
