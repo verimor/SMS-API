@@ -1,8 +1,8 @@
-<?
+<?php
 // SMS API ile tek mesajın çok kişiye gönderimi örneği (HTTP)
 // Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 
-php function sendSMS($header, $message, $phones){ $sms_msg = array(
+function sendSMS($header, $message, $phones){ $sms_msg = array(
     "username" => "xxxx", // https://oim.verimor.com.tr/sms_settings/edit adresinden öğrenebilirsiniz.
     "password" => "xxxx", // https://oim.verimor.com.tr/sms_settings/edit adresinden belirlemeniz gerekir.
     "source_addr" => $header, // Gönderici başlığı, https://oim.verimor.com.tr/headers adresinde onaylanmış olmalı, değilse 400 hatası alırsınız.
