@@ -1,4 +1,4 @@
-* [ASP](https://github.com/verimor/SMS-API/blob/master/sample_codes/tek_mesaj_cok_kisi.asp)
+* [ASP](https://github.com/verimor/SMS-API/blob/master/sample_codes/asp)
 * [C#](https://github.com/verimor/SMS-API/tree/master/sample_codes/C%23)
 * [JAVA](https://github.com/verimor/SMS-API/tree/master/sample_codes/java) (SMS Gönderimi)
 * [JAVA](https://github.com/verimor/SMS-API/tree/master/sample_codes/java_inbound_sms) (Gelen SMS Alımı)
