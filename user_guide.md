@@ -5,7 +5,8 @@ Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yap
 
 Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 1- Verimor hesabınızın kullanıcı adı (12 haneli telefon numaranız, 908501234567 gibi) <br/>
-2- API şifreniz ([OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) tanımlayabilirsiniz). Aynı zamanda bu menüden API erişiminizi sadece belirli IP adresine kısıtlayarak hesap güvenliğinizi de arttırabilirsiniz.
+2- API şifreniz ([OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) tanımlayabilirsiniz).
+3- Gönderim yapacağınız sunucunun IP adresi. BTK yönergeleri kapsamında alınan güvenlik önlemleri sebebiyle SMS göndereceğiniz sunucunuzun IP adresini [SMS Ayarlarım](https://oim.verimor.com.tr/sms_settings/edit) sayfasına girmeniz zorunludur. IP adresinizi girmezseniz `401 Hesabınızda izinli IP ayarları yapılmamış` hatası alırsınız.
 
 ----
 **SMS GÖNDERİMİ**
