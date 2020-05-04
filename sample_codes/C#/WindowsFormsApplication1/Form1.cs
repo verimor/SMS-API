@@ -22,7 +22,9 @@ namespace WindowsFormsApplication1
 
         private void sendTB_Click(object sender, EventArgs e)
         {
-            // NOT: Bu kod JSON.NET kütüphanesini kullanır. Şu adresten indirip proje referanslarına eklemelisiniz: http://www.newtonsoft.com/json
+            // Bu kod JSON.NET kütüphanesini kullanır. Şu adresten indirip proje referanslarına eklemelisiniz: http://www.newtonsoft.com/json
+            // Sunucu IP adresinizi https://oim.verimor.com.tr/sms_settings/edit sayfasından girmiş olmanız gerekir.
+            // Girmezseniz 401 hatası alırsınız.
             var smsIstegi = new SmsIstegi();
             smsIstegi.username = kullaniciAdiTB.Text;
             smsIstegi.password = sifreTB.Text;

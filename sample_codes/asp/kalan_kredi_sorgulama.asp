@@ -1,8 +1,9 @@
 <%
-
+' Sunucu IP adresinizi https://oim.verimor.com.tr/sms_settings/edit sayfasından girmiş olmanız gerekir.
+' Girmezseniz 401 hatası alırsınız.
 username ="kullanıcı_adınız"
-password =  Server.URLEncode("sifreniz") 
-url = "http://sms.verimor.com.tr/v2/balance?username=" & username &"&"&"password="&password 
+password =  Server.URLEncode("sifreniz")
+url = "http://sms.verimor.com.tr/v2/balance?username=" & username &"&"&"password="&password
 
 Set HttpReq = Server.CreateObject("MSXML2.ServerXMLHTTP")
 HttpReq.open "GET", url, false

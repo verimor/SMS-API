@@ -2,6 +2,8 @@
 'SMS API ile tek mesajın çok kişiye gönderimi örneği
 
 'Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
+' Sunucu IP adresinizi https://oim.verimor.com.tr/sms_settings/edit sayfasından girmiş olmanız gerekir.
+' Girmezseniz 401 hatası alırsınız.
 username = "xxxx" ' https://oim.verimor.com.tr/sms_settings/edit adresinden öğrenebilirsiniz.
 password = "xxxx" ' https://oim.verimor.com.tr/sms_settings/edit adresinden belirlemeniz gerekir.
 dest = "905321234567,905321234568"

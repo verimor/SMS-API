@@ -1,4 +1,7 @@
 <?
+// Sunucu IP adresinizi https://oim.verimor.com.tr/sms_settings/edit sayfasından girmiş olmanız gerekir.
+// Girmezseniz 401 hatası alırsınız.
+
 // SMS API ile tek mesajın çok kişiye gönderimi örneği (HTTPS)
 // Aşağıdaki örnek kodu kendinize özelleştirerek kullanabilirsiniz.
 

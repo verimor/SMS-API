@@ -44,15 +44,15 @@ public class VerimorSms {
         si.messages = new Mesaj[]{ // Bu metin UTF8 olmalı, değilse 400 hatası alırsınız. Veritabanından alınan string'ler, veritabanı bağlantısının encoding'iyle gelir, UTF8 değilse çevirmeniz gerekir.
             new Mesaj("mesajınız","90535xxxxxxx,90532xxxxxxx")
         };
-        
+
         return si;
     }
-    
+
     private static void sendRequest(SmsIstegi smsIstegi)
     {
         Gson gson = new Gson();
         String payload = gson.toJson(smsIstegi);
-        
+
         try {
             URL url = new URL("http://sms.verimor.com.tr/v2/send.json");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -60,7 +60,7 @@ public class VerimorSms {
             connection.setDoInput(true);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
-            
+
             OutputStream ostr = connection.getOutputStream();
             OutputStreamWriter ostrw = new OutputStreamWriter(ostr, "UTF-8");
             ostrw.write(payload);
@@ -89,22 +89,25 @@ public class VerimorSms {
             ex.printStackTrace();
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // Sunucu IP adresinizi https://oim.verimor.com.tr/sms_settings/edit sayfasından girmiş olmanız gerekir.
+        // Girmezseniz 401 hatası alırsınız.
+
         SmsIstegi smsIstegi = buildRequest();
         sendRequest(smsIstegi);
     }
-    
+
     private static String readStream(InputStream istr) throws IOException {
         String result = "";
         int c;
         while ((c = istr.read()) != -1){
             result = result.concat(String.valueOf((char)c));
         }
-        
+
         return result;
     }
 }
