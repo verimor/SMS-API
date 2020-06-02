@@ -326,7 +326,7 @@ HTTP/1.1 200 OK
 ```
 
 ---
-**HTTP GET ile SMS BAŞLIKLARIM Listesi Alımı**
+**HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI**
 ---
 Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 
@@ -344,6 +344,89 @@ HTTP/1.1 200 OK
 HTTP/1.1 401 Unauthorized
 Geçersiz kullanıcı adı/şifre
 ```
+
+
+---
+**HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI**
+---
+Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&offset=0&limit=100
+
+**Cevap (Başarılı):**
+
+**Total** değeri toplam kayıt sayısını verir, bir sorguda en fazla 100 adet kayıt dönülür. Devamını almak için offset değerini yükseltip tekrar sorgulamalısınız.
+```json
+HTTP/1.1 200 OK
+{
+  "total": 2,
+  "records": [
+    {
+      "created_at" : "2019-11-25T11:13:24.988+03:00",
+      "phone"      : "905444876543",
+      "source"     : "ret_web"
+    },
+    {
+      "created_at" : "2020-06-02T16:59:56.957+03:00",
+      "phone"      : "905335876543",
+      "source"     : "oim"
+    }
+  ]
+}
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 401 Unauthorized
+Geçersiz kullanıcı adı/şifre
+```
+
+
+---
+**HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ**
+---
+Aşağıdaki örnekte olduğu gibi URL çağrılır
+
+**Örnek:**
+>POST http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&phones=905444876543,905335876543
+
+**Cevap (Başarılı):**
+
+```json
+HTTP/1.1 200 OK
+OK
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 400 Bad Request
+Invalid phone number: 123456
+```
+
+---
+**HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ**
+---
+Aşağıdaki örnekte olduğu gibi URL, DELETE metoduyla çağrılır
+
+**Örnek:**
+>DELETE http://sms.verimor.com.tr/v2/blacklists/905444876543,905335876543?username=908501234567&password=xxxx
+
+**Cevap (Başarılı):**
+
+```json
+HTTP/1.1 200 OK
+OK
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 400 Bad Request
+Invalid phone number: 123456
+```
+
+
+
 
 ----
 **DURUM MESAJLARI**
