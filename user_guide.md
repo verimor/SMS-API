@@ -1,27 +1,26 @@
-----
-## İÇİNDEKİLER
-[SMS API Dökümanı](#sms-api-dökümani)
-[SMS GÖNDERİMİ](#sms-gönderimi)
-[HTTP GET ile SMS Gönderimi](#http-get-ile-sms-gönderimi)
-[HTTP POST JSON ile SMS Gönderimi](#http-post-jsn-ile-sms-gönderimi)
-[İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#ileri-tarihli-mesaj-gönderimi-iptali)
-[GÖNDERİM RAPORU ALIMI](#gönderim-raporu-alimi)
-[GELEN SMS ALIMI](#gelen-sms-alimi)
-[HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI](#http-get-ile-sms-başlik-sms-listesi)
-[HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI](#http-get-ile-karalistenizdeki-numaralari-alimi)
-[HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-ile-karalistenize-numara-eklenmesi)
-[HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-ile-karalistenizdeki-numaranin-silinmesi)
-[DURUM MESAJLARI](#durum-mesajlari)
-----
-----
-**SMS API Dökümanı**
-----
+
+# **VERİMOR SMS API DÖKÜMANI**
+
 Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, ileri tarihli gönderimin nasıl iptal edileceğini, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
 
 Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 1- Verimor hesabınızın kullanıcı adı (12 haneli telefon numaranız, 908501234567 gibi) <br/>
 2- API şifreniz ([OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) tanımlayabilirsiniz).<br/>
 3- Gönderim yapacağınız sunucunun IP adresi. BTK yönergeleri kapsamında alınan güvenlik önlemleri sebebiyle SMS göndereceğiniz sunucunuzun IP adresini [SMS Ayarlarım](https://oim.verimor.com.tr/sms_settings/edit) sayfasına girmeniz zorunludur. IP adresinizi girmezseniz `401 Hesabınızda izinli IP ayarları yapılmamış` hatası alırsınız.
+
+----
+**İÇİNDEKİLER** 
+----
+* [SMS GÖNDERİMİ](#sms-g%C3%B6nderi%CC%87mi%CC%87)
+* [İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#i%CC%87leri%CC%87-tari%CC%87hli%CC%87-mesaj-g%C3%B6nderi%CC%87mi%CC%87-i%CC%87ptali%CC%87)
+* [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
+* [GELEN SMS ALIMI](#gelen-sms-alimi)
+* [HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI](#http-get-i%CC%87le-sms-ba%C5%9Flik-li%CC%87stesi%CC%87-alimi)
+* [HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI](#http-get-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
+* [HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-i%CC%87le-karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
+* [HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
+* [HATA KODLARI](#hata-kodlari)
+* [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
 
 ----
 **SMS GÖNDERİMİ**
@@ -258,7 +257,6 @@ Bu kampanya size ait değil
 HTTP/1.1 404 Not Found
 Bu idye sahip kampanya bulunamadı
 ```
-
 ----
 **GELEN SMS ALIMI**
 ----
@@ -440,15 +438,15 @@ HTTP/1.1 400 Bad Request
 Invalid phone number: 123456
 ```
 
-
-
-
 ----
-**DURUM MESAJLARI**
+**HATA KODLARI**
 ----
 SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında aşağıdaki tablodaki değerler olabilir:
-
+\
+\
+\
 **Mesaj Gönderirken Dönebilecek Durumlar ve Açıklamaları**
+
 
 | Web_Arayüzü_Durumları | API                         | Açıklama                                                                                |
 | --------------------- |-----------------------------| ----------------------------------------------------------------------------------------|
@@ -461,8 +459,9 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_DESTINATION_ADDRESS | Mesaj için alıcı verilmemiş.                                                            |
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS        | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
-| Yasaklı içerik        | FORBIDDEN_MESSAGE                | Mesajınız yasak kelime(ler) içeriyor.                                                                                    |
-
+| Yasaklı içerik        | FORBIDDEN_MESSAGE                | Mesajınız yasak kelime(ler) içeriyor.                                                                                     |
+\
+\
 **Mesaj Durumu Alınırken Dönebilecek Durumlar ve Açıklamaları**
 
 | Web_Arayüzü_Durumları | API_Durumları                   | Açıklama                                                                                                                    |
@@ -482,7 +481,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Geçersiz Şebeke       | NETWORK_NOTCOVERED              | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Gönderim Hatası       | SEND_ERROR                      | Mesajınız gönderilirken hata oluştu. (Sebebi çeşitli olabilir.)                                                             |
 | Uluslararası Gönderim Kapalı | INTERNATIONAL_DENIED            | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                    |
-
+\
+\
 **Mesaj Hata Kodları (gsm_error)**
 İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
 
@@ -516,7 +516,9 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | 4103    | EC_DESTINATION_FLOODING | Karşıdaki abone çok fazla mesaj almış olduğu için yeni mesaj kabul etmiyor |
 | 4104    | EC_DESTINATION_TXT_FLOODING | Karşıdaki aboneye aynı mesaj çok defa gönderilmiş olduğu için yeni mesaj kabul etmiyor |
 
-**SMS Boy Karakter Limitleri**
+----
+**SMS BOY KARAKTER LİMİTLERİ**
+----
 
 |      | Normal (datacoding=0) | Türkçe (datacoding=1) | Unicode (datacoding=2) |
 |------|-----------------------|-----------------------| -----------------------|
