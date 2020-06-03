@@ -1,4 +1,19 @@
 ----
+## İÇİNDEKİLER
+[SMS API Dökümanı](#sms-api-dökümani)
+[SMS GÖNDERİMİ](#sms-gönderimi)
+[HTTP GET ile SMS Gönderimi](#http-get-ile-sms-gönderimi)
+[HTTP POST JSON ile SMS Gönderimi](#http-post-jsn-ile-sms-gönderimi)
+[İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#ileri-tarihli-mesaj-gönderimi-iptali)
+[GÖNDERİM RAPORU ALIMI](#gönderim-raporu-alimi)
+[GELEN SMS ALIMI](#gelen-sms-alimi)
+[HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI](#http-get-ile-sms-başlik-sms-listesi)
+[HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI](#http-get-ile-karalistenizdeki-numaralari-alimi)
+[HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-ile-karalistenize-numara-eklenmesi)
+[HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-ile-karalistenizdeki-numaranin-silinmesi)
+[DURUM MESAJLARI](#durum-mesajlari)
+----
+----
 **SMS API Dökümanı**
 ----
 Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, ileri tarihli gönderimin nasıl iptal edileceğini, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
