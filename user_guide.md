@@ -459,13 +459,15 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_DESTINATION_ADDRESS | Mesaj için alıcı verilmemiş.                                                            |
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS        | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
-| Yasaklı içerik        | FORBIDDEN_MESSAGE                | Mesajınız yasak kelime(ler) içeriyor.                                                                                     |
+| Yasaklı içerik        | FORBIDDEN_MESSAGE           | Mesajınız yasak kelime(ler) içeriyor.                                                   |
+
 \
 \
+
 **Mesaj Durumu Alınırken Dönebilecek Durumlar ve Açıklamaları**
 
 | Web_Arayüzü_Durumları | API_Durumları                   | Açıklama                                                                                                                    |
-| --------------------- |---------------------------------| ----------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | --------------------------------| ----------------------------------------------------------------------------------------------------------------------------|
 | Gönderiliyor          | SENDING                         | Mesaj gönderiliyor.                                                                                                         |
 | Bekliyor              | WAITING                         | Mesaj gönderildi. Cevap bekleniyor.                                                                                         |
 | İletildi              | DELIVERED                       | Mesaj iletildi.                                                                                                             |
@@ -480,9 +482,11 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Geçersiz Şebeke       | ROUTE_NOT_AVAILABLE             | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Geçersiz Şebeke       | NETWORK_NOTCOVERED              | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Gönderim Hatası       | SEND_ERROR                      | Mesajınız gönderilirken hata oluştu. (Sebebi çeşitli olabilir.)                                                             |
-| Uluslararası Gönderim Kapalı | INTERNATIONAL_DENIED            | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                    |
+| Uluslararası Gönderim Kapalı | INTERNATIONAL_DENIED     | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                      |
+
 \
 \
+
 **Mesaj Hata Kodları (gsm_error)**
 İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
 
