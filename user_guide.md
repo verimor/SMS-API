@@ -462,7 +462,6 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Yasaklı içerik        | FORBIDDEN_MESSAGE           | Mesajınız yasak kelime(ler) içeriyor.                                                   |
 
 \
-\
 
 **Mesaj Durumu Alınırken Dönebilecek Durumlar ve Açıklamaları**
 
@@ -484,8 +483,6 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Gönderim Hatası       | SEND_ERROR                      | Mesajınız gönderilirken hata oluştu. (Sebebi çeşitli olabilir.)                                                             |
 | Uluslararası Gönderim Kapalı | INTERNATIONAL_DENIED     | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                      |
 
-\
-\
 
 **Mesaj Hata Kodları (gsm_error)**
 İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
