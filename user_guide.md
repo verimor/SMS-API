@@ -462,7 +462,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
   
   
 **Mesaj Durumu Alınırken Dönebilecek Durumlar ve Açıklamaları**  
-
+  
+  
 | Web_Arayüzü_Durumları | API_Durumları                   | Açıklama                                                                                                                    |
 | --------------------- | --------------------------------| ----------------------------------------------------------------------------------------------------------------------------|
 | Gönderiliyor          | SENDING                         | Mesaj gönderiliyor.                                                                                                         |
@@ -482,7 +483,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Uluslararası Gönderim Kapalı | INTERNATIONAL_DENIED     | OİM'de SMS ayarlarından 'uluslararası gönderim' ayarı kapalı olduğu için gönderilmedi.                                      |  
   
   
-**Mesaj Hata Kodları (gsm_error)**
+**Mesaj Hata Kodları (gsm_error)**  
 İletilemeyen mesajlar için karşı operatörden alınan teknik hata kodları ve açıklamaları aşağıda verilmiştir.
 
 | Hata No | Hata Kodu             | Açıklama                                       |
