@@ -19,6 +19,7 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI](#http-get-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
 * [HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-i%CC%87le-karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
 * [HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
+* [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
 
@@ -437,6 +438,55 @@ OK
 HTTP/1.1 400 Bad Request
 Invalid phone number: 123456
 ```
+
+----
+**İYS İZNİ GÖNDERİMİ**
+----
+
+Ticari ileti göndermek için markalarınızı İYS'ye (İleti Yönetim Sistemi) kaydettirmiş olmalı ve [OİM Başlık Yönetiminden](https://oim.verimor.com.tr/headers) ilgili başlığa İYS kodlarını girmiş olmanız gerekir. Bu işlemleri yaptıktan sonra müşterilerinizden aldığınız izinleri aşağıdaki yöntemle İYS'ye bildirebilirsiniz.
+
+**HTTP POST JSON ile İYS İzni Gönderimi** 
+
+Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
+
+```json
+POST http://sms.verimor.com.tr/v2/iys_consents.json
+Host: sms.verimor.com.tr
+Content-Type: application/json
+Accept: */*
+ 
+{
+  "username"    : "908501234567",
+  "password"    : "xxxxxxx",
+  "source_addr" : "BASLIGIM",
+  "consents": [
+               { 
+                "type"           : "MESAJ",
+                "source"         : "HS_WEB",
+                "status"         : "ONAY",
+                "recipient_type" : "BIREYSEL",
+                "consent_date"   : "2020-11-10",
+                "recipient"      : "905311234567",
+               }
+              ]
+}
+```
+* username: Verimor hesabınızın kullanıcı adı. (zorunlu)
+* password: API şifreniz. (zorunlu)
+* source_addr: Gönderici kimliği (Başlık). Source_addr boş ise sistemde kayıtlı ilk başlığınız kullanılır.
+* type: İletişim kanalı (zorunlu). Alabileceği değerler: "ARAMA" "MESAJ" "EPOSTA"
+* source: İzini aldığınız kaynak (zorunlu). Alabileceği değerler: "HS_FIZIKSEL_ORTAM" "HS_ISLAK_IMZA" "HS_WEB" "HS_CAGRI_MERKEZI" "HS_SOSYAL_MEDYA" "HS_EPOSTA" "HS_MESAJ" "HS_MOBIL" "HS_EORTAM" "HS_ETKINLIK" "HS_2015" "HS_ATM" "HS_KARAR"
+* status: İzin durumu (zorunlu). Alabileceği değerler: "ONAY" "RET"
+* recipient_type: Alıcı türü (zorunlu). Alabileceği değerler: "BIREYSEL" "TACIR"
+* source: İzin alınma tarihi (zorunlu).
+* recipient: Alıcı telefon numarası (zorunlu).
+
+**Cevap:**
+```json
+HTTP/1.1 200 OK
+20212
+```
+
 
 ----
 **HATA KODLARI**
