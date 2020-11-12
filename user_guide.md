@@ -467,6 +467,14 @@ Accept: */*
                 "recipient_type" : "BIREYSEL",
                 "consent_date"   : "2020-11-10",
                 "recipient"      : "905311234567",
+               },
+               { 
+                "type"           : "MESAJ",
+                "source"         : "HS_MESAJ",
+                "status"         : "RET",
+                "recipient_type" : "BIREYSEL",
+                "consent_date"   : "2020-11-10",
+                "recipient"      : "905311234568",
                }
               ]
 }
