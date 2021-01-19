@@ -43,6 +43,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * valid_for: Mesajın geçerlilik süresi. SS:DD (veya S:DD) formatında olmalı. (Varsayılan değer 24:00, Minumum değer 00:01, Maksimum değer 48:00)
 * send_at: Mesajın gönderilmesini istediğiniz tarih saat. ‘2015-02-20 16:06:00’ şeklinde veya ISO 8601 standardındaki formatlar kabul edilir (http://en.wikipedia.org/wiki/ISO_8601). Boş ise mesaj hemen gönderilir.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
+* is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
 
 **Cevap (Başarılı):**
 ```json
@@ -95,6 +96,8 @@ Accept: */*
 * dest: Mesajın gönderileceği telefon numaraları. Birden fazla numara varsa virgül ile ayrılmalıdır. (zorunlu)
 * id: Kampanyanın içindeki mesajlara verebileceğiniz özel ID'lerdir. Push ile gönderim raporu alırken bu ID'yi kullanabilirsiniz. "dest" parametresinde birden fazla numara varsa, o kadar id verilmelidir, yoksa bu parametre dikkate alınmaz.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde bu parametrenin kullanılmaması gerekmektedir.
+* is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
+
 
 **Cevap:**
 ```json
@@ -513,6 +516,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | INVALID_PERIOD              | Mesajın geçerlilik süresi (validity period) geçersiz. (1dk. ile 48 saat arasında değil).|
 | -                     | INVALID_DELIVERY_TIME       | "schedule_delivery_time" parametresi geçersiz veya geçmiş tarihe ait.                   |
 | -                     | INVALID_DATACODING          | datacoding parametresi hatalı verilmiş.                                                 |
+| -                     | MISSING_IYS_BRAND_CODE      | Ticari gönderimlerde başlığın marka kodunun tanımlanmış olması gereklidir               |
 | -                     | MISSING_DESTINATION_ADDRESS | Mesaj için alıcı verilmemiş.                                                            |
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS        | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
