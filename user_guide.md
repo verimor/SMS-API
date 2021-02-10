@@ -20,6 +20,7 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-i%CC%87le-karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
 * [HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
 * [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
+* [İYS GÜNLÜK RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-rapor-alimi)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
 
@@ -496,6 +497,59 @@ Accept: */*
 ```json
 HTTP/1.1 200 OK
 20212
+```
+
+----
+**İYS GÜNLÜK RAPOR ALIMI**
+----
+
+Verimor, hergün İYS sisteminden gün sonunda, günlük izin hareketlerini inceleyip bir kampanya yaratır. Oluşturulan bu kampanya, [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL'ye (İYS Push URL) gönderilir. 
+
+Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
+
+```json
+POST http://sizin.adresiniz.com.tr/iys_campaign_push
+Host: sizin.adresiniz.com.tr
+Content-Type: application/json
+Accept: */*
+ {
+  "iys_campaign_id"       : 1234,
+  "report_date"        : "2021-01-18"
+ }
+```
+
+Daha sonra bu id ile aşağıdaki şekilde sisteme gelip, izinler çekilebilir.
+
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/iys/campaigns/[IYS_CAMPAIGN_ID]/consents?username=908501234567&password=xxxx&offset=0&limit=100
+
+**Cevap (Başarılı):**
+
+**Total** değeri toplam kayıt sayısını verir, bir sorguda en fazla 100 adet kayıt dönülür. Devamını almak için offset değerini yükseltip tekrar sorgulamalısınız.
+```json
+HTTP/1.1 200 OK
+{
+  "total": 2,
+  "records": [
+      {
+         "type":"MESAJ",
+         "source":"HS_WEB",
+         "recipient":"905331001727",
+         "status":"ONAY",
+         "consent_date":"2020-06-11T22:14:00.000+03:00",
+         "recipient_type":"BIREYSEL"
+      },
+      {
+         "type":"MESAJ",
+         "source":"HS_WEB",
+         "recipient":"905331001017",
+         "status":"ONAY",
+         "consent_date":"2020-06-11T22:14:00.000+03:00",
+         "recipient_type":"BIREYSEL"
+      }
+  ]
+}
 ```
 
 
