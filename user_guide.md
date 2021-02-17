@@ -45,6 +45,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * send_at: Mesajın gönderilmesini istediğiniz tarih saat. ‘2015-02-20 16:06:00’ şeklinde veya ISO 8601 standardındaki formatlar kabul edilir (http://en.wikipedia.org/wiki/ISO_8601). Boş ise mesaj hemen gönderilir.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz. Gönderilmediği durumda false kabul edilir.
+* iys_recipient_type: "BIREYSEL" yada "TACIR" olmalıdır. (is_commercial true ise zorunludur.)
 
 **Cevap (Başarılı):**
 ```json
@@ -98,6 +99,7 @@ Accept: */*
 * id: Kampanyanın içindeki mesajlara verebileceğiniz özel ID'lerdir. Push ile gönderim raporu alırken bu ID'yi kullanabilirsiniz. "dest" parametresinde birden fazla numara varsa, o kadar id verilmelidir, yoksa bu parametre dikkate alınmaz.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde bu parametrenin kullanılmaması gerekmektedir.
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz. Gönderilmediği durumda false kabul edilir.
+* iys_recipient_type: "BIREYSEL" yada "TACIR" olmalıdır. (is_commercial true ise zorunludur.)
 
 
 **Cevap:**
@@ -571,6 +573,9 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | INVALID_DELIVERY_TIME       | "schedule_delivery_time" parametresi geçersiz veya geçmiş tarihe ait.                   |
 | -                     | INVALID_DATACODING          | datacoding parametresi hatalı verilmiş.                                                 |
 | -                     | MISSING_IYS_BRAND_CODE      | Ticari gönderimlerde başlığın marka kodunun tanımlanmış olması gereklidir               |
+| -                     | AHS_AUTHORIZATION_ERROR     | Yetkilendirme hatası. Lütfen İYS ile iletişime geçip Verimor'a AHS izni veriniz.        |
+| -                     | COMMERCIAL_SENDING_ERROR_UNDER_150K | 150 bin adedin altında ticari elektronik ileti onayı olan hesaplar için ticari gönderim 16 Temmuz 2021 de başlayacaktır. Bu tarihe kadar normal gönderimi kullanmalısınız.                                                                                        |         
+| -                     | INVALID_IYS_RECIPIENT_TYPE  | iys_recipient_type "BIREYSEL" yada "TACIR" olmalıdır. |
 | -                     | MISSING_DESTINATION_ADDRESS | Mesaj için alıcı verilmemiş.                                                            |
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS        | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
@@ -592,6 +597,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Reddedildi            | REJECTED                        | Mesajınızın gönderimi reddedildi. (Genelde gsm operatörü tarafından içerik kontrolü sonucu oluşur.)                         |
 | Mükerrer Gönderim     | DOUBLE_SEND_ERROR               | Aynı içerik aynı gün aynı başlıkla aynı numaraya gönderilmiş. Mükerrer gönderim engellendi.                                 |
 | Karalistede           | BLACKLISTED_DESTINATION_ADDRESS | Alıcı kara listenizde.                                                                                                      |
+| İYS izni yok          | NOT_ALLOWED_BY_IYS              | İYS izni yok.                                                                                                               |
 | Tarife Bulunamadı     | MISSING_TARIFF                  | Alıcının operatörü tarifelerimiz arasında bulunamamıştır. (Uluslararası yönlerde oluşur.)                                   |
 | Geçersiz Şebeke       | ROUTE_NOT_AVAILABLE             | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
 | Geçersiz Şebeke       | NETWORK_NOTCOVERED              | Hesabınız bu alıcıya mesaj gönderemez. (Uluslararası bazı yönlerde oluşur.)                                                 |
