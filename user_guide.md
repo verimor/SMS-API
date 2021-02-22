@@ -580,10 +580,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS         | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS                | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
 | Yasaklı içerik        | FORBIDDEN_MESSAGE                   | Mesajınız yasak kelime(ler) içeriyor.                                                   |
-| -                     | INVALID_CONSENT_DATE            | "consent_date" 1 Mayıs 2015 tarihinden önce olamaz.
-'consent_date' ileri bir tarih olamaz.
-'consent_date' 3 günden eski olamaz.
-Kaynağı HS_2015 olan izinlerde 'consent_date' 1 Mayıs 2015 olmalıdır.                                                 |
+| -                     | INVALID_CONSENT_DATE            | "consent_date" 1 Mayıs 2015 tarihinden önce olamaz.\n 'consent_date' ileri bir tarih olamaz. 'consent_date' 3 günden eski olamaz. Kaynağı HS_2015 olan izinlerde 'consent_date' 1 Mayıs 2015 olmalıdır.                                                 |
 | -                     | MISSING_CONSENT                     | Eksik izin durumu.                                                                      |
 | -                     | MISSING_CONSENT_DATE                | Gönderim tipi "BIREYSEL" olanlarda consent_date girilmelidir.                           |
 | -                     | INVALID_RECIPIENT                   | Geçersiz gönderim tipi.                                                                 |
