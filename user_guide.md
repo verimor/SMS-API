@@ -578,6 +578,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | INVALID_IYS_RECIPIENT_TYPE          | iys_recipient_type "BIREYSEL" yada "TACIR" olmalıdır. 
 | -                     | MISSING_DESTINATION_ADDRESS         | Mesaj için alıcı verilmemiş.                                                            |
 | Hatalı Numara         | INVALID_DESTINATION_ADDRESS         | Alıcı telefon numarasının formatı geçersiz. (905121234567 gibi olmalı)                  |
+|                       | INVALID_UTF8                        | Encdoing UTF8 olmalıdır.                                                                |
+|                       | MUKERRER_RAPORLAMA                  | 24 Saat içerisinde aynı sms zaten atılmış.                                              |
 | Kredi Yetersiz        | INSUFFICIENT_CREDITS                | Mesajı göndermek için yeterli bakiyeniz yok.                                            |
 | Yasaklı içerik        | FORBIDDEN_MESSAGE                   | Mesajınız yasak kelime(ler) içeriyor.                                                   |
 | -                     | INVALID_CONSENT_DATE            | "consent_date" 1 Mayıs 2015 tarihinden önce olamaz. <br/>"consent_date" ileri bir tarih olamaz.<br/>"consent_date" 3 günden eski olamaz.<br/>Kaynağı HS_2015 olan izinlerde "consent_date" 1 Mayıs 2015 olmalıdır.                                                 |
