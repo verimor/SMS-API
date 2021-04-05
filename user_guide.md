@@ -20,7 +20,8 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-i%CC%87le-karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
 * [HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
 * [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
-* [İYS GÜNLÜK RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-rapor-alimi)
+* [İYS GÜNLÜK VATANDAŞ RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-vatanda%C5%9F-rapor-alimi)
+* [İYS İZİNLERİ RAPORU](#i%CC%87ys-i%CC%87zi%CC%87nleri%CC%87-raporu)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
 
@@ -499,35 +500,20 @@ HTTP/1.1 200 OK
 20212
 ```
 
+Daha sonra istenirse, "İYS İZİNLERİ RAPORU" başlığı altındaki dökümandan faydalanılarak, gönderilen izinlerin durumları alınabilir.
+
 ----
-**İYS GÜNLÜK RAPOR ALIMI**
+**İYS İZİNLERİ RAPORU**
 ----
-
-Hergün gün sonunda vatandaşın İYS kanalları (E-Devlet, İYS Web/Mobil/Çağrı merkezi) üzerinden oluşturduğu hareketler için bir kampanya oluşturur. Oluşturulan bu kampanya, [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL'ye (İYS Push URL) gönderilir. 
-
-Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
-
-```json
-POST http://sizin.adresiniz.com.tr/iys_campaign_push
-Host: sizin.adresiniz.com.tr
-Content-Type: application/json
-Accept: */*
- {
-  "iys_campaign_id"    :1234,
-  "report_date"        :"2021-01-18",
-  "source_addr"        :"BASLIGIM"
- }
-```
-
-Daha sonra bu id ile aşağıdaki şekilde sisteme gelip, izinler çekilebilir.
-
+Gönderilen İYS izinleri ve İYS günlük vatandaş izin değişikliklerini kampanya id'si ile sorgulayabilirsiniz.
 
 **Örnek:**
->http://sms.verimor.com.tr/v2/iys/campaigns/[IYS_CAMPAIGN_ID]/consents?username=908501234567&password=xxxx&offset=0&limit=100
+>GET http://sms.verimor.com.tr/v2/iys/campaigns/IYS_CAMPAIGN_ID/consents?username=908501234567&password=xxxx&offset=0&limit=100
 
 **Cevap (Başarılı):**
 
 **Total** değeri toplam kayıt sayısını verir, bir sorguda en fazla 100 adet kayıt dönülür. Devamını almak için offset değerini yükseltip tekrar sorgulamalısınız.
+
 ```json
 HTTP/1.1 200 OK
 {
@@ -554,6 +540,27 @@ HTTP/1.1 200 OK
 }
 ```
 
+----
+**İYS GÜNLÜK VATANDAŞ RAPOR ALIMI**
+----
+
+Hergün gün sonunda vatandaşın İYS kanalları (E-Devlet, İYS Web/Mobil/Çağrı merkezi) üzerinden oluşturduğu hareketler için bir kampanya oluşturulur. Oluşturulan bu kampanya ile ilgili bilgiler, [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL'ye (İYS Push URL) gönderilir. 
+
+Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
+
+```json
+POST http://sizin.adresiniz.com.tr/iys_campaign_push
+Host: sizin.adresiniz.com.tr
+Content-Type: application/json
+Accept: */*
+ {
+  "iys_campaign_id"    :1234,
+  "report_date"        :"2021-01-18",
+  "source_addr"        :"BASLIGIM"
+ }
+```
+
+Daha sonra istenirse, "İYS İZİNLERİ RAPORU" başlığı altındaki dökümandan faydalanılarak, oluşturulan kampanya detayları alınabilir.
 
 ----
 **HATA KODLARI**
