@@ -503,7 +503,7 @@ HTTP/1.1 200 OK
 **İYS GÜNLÜK RAPOR ALIMI**
 ----
 
-Verimor, hergün İYS sisteminden gün sonunda, günlük izin hareketlerini inceleyip bir kampanya yaratır. Oluşturulan bu kampanya, [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL'ye (İYS Push URL) gönderilir. 
+Hergün gün sonunda vatandaşın İYS kanalları (E-Devlet, İYS Web/Mobil/Çağrı merkezi) üzerinden oluşturduğu hareketler için bir kampanya oluşturur. Oluşturulan bu kampanya, [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL'ye (İYS Push URL) gönderilir. 
 
 Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
 
