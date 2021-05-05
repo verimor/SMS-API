@@ -15,10 +15,10 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#i%CC%87leri%CC%87-tari%CC%87hli%CC%87-mesaj-g%C3%B6nderi%CC%87mi%CC%87-i%CC%87ptali%CC%87)
 * [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
 * [GELEN SMS ALIMI](#gelen-sms-alimi)
-* [HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI](#http-get-i%CC%87le-sms-ba%C5%9Flik-li%CC%87stesi%CC%87-alimi)
-* [HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI](#http-get-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
-* [HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ](#http-post-i%CC%87le-karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
-* [HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#http-delete-i%CC%87le-karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
+* [SMS BAŞLIK LİSTESİ ALIMI](#sms-ba%C5%9Flik-li%CC%87stesi%CC%87-alimi)
+* [KARALİSTENİZDEKİ NUMARALARIN ALIMI](#karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
+* [KARALİSTENİZE NUMARA EKLENMESİ](#karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
+* [KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
 * [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
 * [İYS GÜNLÜK VATANDAŞ RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-vatanda%C5%9F-rapor-alimi)
 * [İYS İZİNLERİ RAPORU](#i%CC%87ys-i%CC%87zi%CC%87nleri%CC%87-raporu)
@@ -345,9 +345,9 @@ HTTP/1.1 200 OK
 ```
 
 ---
-**HTTP GET İLE SMS BAŞLIK LİSTESİ ALIMI**
+**SMS BAŞLIK LİSTESİ ALIMI**
 ---
-Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
+Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
 
 **Örnek:**
 >http://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
@@ -366,9 +366,9 @@ Geçersiz kullanıcı adı/şifre
 
 
 ---
-**HTTP GET İLE KARALİSTENİZDEKİ NUMARALARIN ALIMI**
+**KARALİSTENİZDEKİ NUMARALARIN ALIMI**
 ---
-Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
+Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
 
 **Örnek:**
 >http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&offset=0&limit=100
@@ -403,9 +403,9 @@ Geçersiz kullanıcı adı/şifre
 
 
 ---
-**HTTP POST İLE KARALİSTENİZE NUMARA EKLENMESİ**
+**KARALİSTENİZE NUMARA EKLENMESİ**
 ---
-Aşağıdaki örnekte olduğu gibi URL çağrılır
+Aşağıdaki örnekte olduğu gibi HTTP POST ile URL çağrılır
 
 **Örnek:**
 >POST http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&phones=905444876543,905335876543
@@ -424,7 +424,7 @@ Invalid phone number: 123456
 ```
 
 ---
-**HTTP DELETE İLE KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ**
+**KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ**
 ---
 Aşağıdaki örnekte olduğu gibi URL, DELETE metoduyla çağrılır
 
