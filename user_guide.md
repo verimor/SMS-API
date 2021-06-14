@@ -519,6 +519,7 @@ HTTP/1.1 200 OK
 {
   "total": 2,
   "source_addr": "BASLIGIM",
+  "status"      : "Tamamlandı",
   "records": [
       {
          "type":"MESAJ",
