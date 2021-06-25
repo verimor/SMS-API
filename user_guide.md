@@ -527,15 +527,18 @@ HTTP/1.1 200 OK
          "recipient":"905331001727",
          "status":"ONAY",
          "consent_date":"2020-06-11T22:14:00.000+03:00",
-         "recipient_type":"BIREYSEL"
+         "recipient_type":"BIREYSEL",
+         "request_status":"Başarılı"
       },
       {
          "type":"MESAJ",
          "source":"HS_WEB",
          "recipient":"905331001017",
-         "status":"ONAY",
+         "status":"RET",
          "consent_date":"2020-06-11T22:14:00.000+03:00",
-         "recipient_type":"BIREYSEL"
+         "recipient_type":"BIREYSEL",
+         "request_status":"Başarısız",
+         "request_error": "H175 İlk defa kaydedilen bir iznin durum (status) bilgisi RET olmamalıdır."
       }
   ]
 }
