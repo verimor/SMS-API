@@ -585,6 +585,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | INVALID_DATACODING                  | datacoding parametresi hatalı verilmiş.                                                 |
 | -                     | MISSING_IYS_BRAND_CODE              | Ticari gönderimlerde başlığın marka kodunun tanımlanmış olması gereklidir               |
 | -                     | AHS_AUTHORIZATION_ERROR             | Yetkilendirme hatası. Lütfen İYS ile iletişime geçip Verimor'a AHS izni veriniz.        |
+| -                     | NO_AHS_BRAND_ERROR                  | VKN'ye ait, İYS'de kayıtlı bir marka bulunamadı.                                        |
 | -                     | COMMERCIAL_SENDING_ERROR_UNDER_150K | 150 bin adedin altında ticari elektronik ileti onayı olan hesaplar için ticari gönderim 16 Temmuz 2021\'de başlayacaktır. Bu tarihe kadar normal gönderimi kullanmalısınız.                                                                                        |         
 | -                     | INVALID_IYS_RECIPIENT_TYPE          | iys_recipient_type "BIREYSEL" yada "TACIR" olmalıdır. 
 | -                     | MISSING_DESTINATION_ADDRESS         | Mesaj için alıcı verilmemiş.                                                            |
