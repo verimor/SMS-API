@@ -47,6 +47,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
 * iys_recipient_type: BIREYSEL | TACIR değeri alır. Ticari gönderimlerde mutlaka belirlemelisiniz.
+> **_NOT:_** Bir seferde maksimum 100.000 adet SMS gönderebilirsiniz.
 
 **Cevap (Başarılı):**
 ```json
@@ -102,6 +103,7 @@ Accept: */*
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
 * iys_recipient_type: BIREYSEL | TACIR değeri alır. Ticari gönderimlerde mutlaka belirlemelisiniz.
 
+> **_NOT:_** Bir seferde maksimum 100.000 adet SMS gönderebilirsiniz.
 
 **Cevap:**
 ```json
@@ -600,6 +602,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_CONSENT                     | Eksik izin durumu.                                                                      |
 | -                     | MISSING_CONSENT_DATE                | Gönderim tipi "BIREYSEL" olanlarda consent_date girilmelidir.                           |
 | -                     | INVALID_RECIPIENT                   | Geçersiz gönderim tipi.                                                                 |
+| -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 100.000 adet mesajdan daha fazlası kabul edilmez.
 
 
 
