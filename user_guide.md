@@ -507,6 +507,44 @@ HTTP/1.1 200 OK
 Daha sonra istenirse, "İYS İZİNLERİ RAPORU" başlığı altındaki dökümandan faydalanılarak, gönderilen izinlerin durumları alınabilir.
 
 ----
+
+**İYS KAMPANLARINI LİSTELEME**
+----
+Gönderilen İYS izinleri ve İYS günlük vatandaş izin değişiklikleri için kampanyalar oluşturulur. Bu kampanyalar bu servisi kullanarak görülebilir.
+
+**Örnek:**
+>GET http://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100
+
+**Cevap (Başarılı):**
+
+**Total** değeri toplam kayıt sayısını verir, bir sorguda en fazla 100 adet kayıt dönülür. Devamını almak için offset değerini yükseltip tekrar sorgulamalısınız.
+
+```json
+HTTP/1.1 200 OK
+{
+    "records": [
+        {
+            "id": 103,
+            "header_name": "VERIMOR",
+            "iys_code": 627033,
+            "iys_brand_code": 627033,
+            "source": "iys",
+            "created_at": "2021-02-10T11:58:57.508+03:00"
+        },
+        {
+            "id": 104,
+            "header_name": "VERIMOR",
+            "iys_code": 627033,
+            "iys_brand_code": 627033,
+            "source": "iys",
+            "created_at": "2021-02-10T11:59:16.895+03:00"
+        }
+    ],
+    "total": 2
+}
+```
+
+----
 **İYS İZİNLERİ RAPORU**
 ----
 Gönderilen İYS izinleri ve İYS günlük vatandaş izin değişikliklerini kampanya id'si ile sorgulayabilirsiniz.
