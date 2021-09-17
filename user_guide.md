@@ -544,6 +544,12 @@ HTTP/1.1 200 OK
 }
 ```
 
+**Filtrelenebilir alanlar**
+* source: Alabileceği değerler list, csv, api, sms, web, iys
+
+**Örnek (kaynağı İYS olanları sorgulama):**
+>GET http://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100&source=iys
+
 ----
 **İYS İZİNLERİ RAPORU**
 ----
