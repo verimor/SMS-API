@@ -21,6 +21,7 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
 * [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
 * [İYS GÜNLÜK VATANDAŞ RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-vatanda%C5%9F-rapor-alimi)
+* [İYS KAMPANLARINI LİSTELEME](#i̇ys-kampanlarini-li̇steleme)
 * [İYS İZİNLERİ RAPORU](#i%CC%87ys-i%CC%87zi%CC%87nleri%CC%87-raporu)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
