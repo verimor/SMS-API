@@ -104,7 +104,7 @@ Accept: */*
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
 * iys_recipient_type: BIREYSEL | TACIR değeri alır. Ticari gönderimlerde mutlaka belirlemelisiniz.
 
-> **_NOT:_** Bir seferde maksimum 100.000 adet SMS gönderebilirsiniz.
+> **_NOT:_** Bir seferde maksimum 50.000 adet SMS gönderebilirsiniz.
 
 **Cevap:**
 ```json
@@ -647,7 +647,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_CONSENT                     | Eksik izin durumu.                                                                      |
 | -                     | MISSING_CONSENT_DATE                | Gönderim tipi "BIREYSEL" olanlarda consent_date girilmelidir.                           |
 | -                     | INVALID_RECIPIENT                   | Geçersiz gönderim tipi.                                                                 |
-| -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 100.000 adet mesajdan daha fazlası kabul edilmez.
+| -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 50.000 adet mesajdan daha fazlası kabul edilmez.
 
 
 
