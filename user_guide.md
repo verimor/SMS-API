@@ -48,7 +48,7 @@ Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 * datacoding: Mesaj metni için kullanılacak karakter kodlaması. 0, 1 ve 2 değerlerini alabilir. Mesajda kullanılabilecek harfleri ve mesajın boy limitlerini belirler. Boş ise mesaj metnine bakılır, türkçe harf varsa 1, yoksa 0 kaydedilir. Mesaj boyları tablosu için dokümanın sonuna bakınız. Yurt dışına sms gönderiminde değeri 1 olarak gönderilmemelidir.
 * is_commercial: Opsiyonel. true | false değeri alır. Ticari gönderimlerde true olarak belirlemelisiniz.
 * iys_recipient_type: BIREYSEL | TACIR değeri alır. Ticari gönderimlerde mutlaka belirlemelisiniz.
-> **_NOT:_** Bir seferde maksimum 100.000 adet SMS gönderebilirsiniz.
+> **_NOT:_** Bir seferde maksimum 50.000 adet SMS gönderebilirsiniz.
 
 **Cevap (Başarılı):**
 ```json
