@@ -16,6 +16,7 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
 * [GELEN SMS ALIMI](#gelen-sms-alimi)
 * [SMS BAŞLIK LİSTESİ ALIMI](#sms-ba%C5%9Flik-li%CC%87stesi%CC%87-alimi)
+* [SMS KALAN KREDİ SORGULAMA](#sms-kalan-kredi%CC%87-sorgulama)
 * [KARALİSTENİZDEKİ NUMARALARIN ALIMI](#karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
 * [KARALİSTENİZE NUMARA EKLENMESİ](#karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
 * [KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
