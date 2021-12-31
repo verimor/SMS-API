@@ -369,6 +369,25 @@ HTTP/1.1 401 Unauthorized
 Geçersiz kullanıcı adı/şifre
 ```
 
+---
+**SMS KALAN KREDİ SORGULAMA**
+---
+Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/balance?username=908501234567&password=xxxx
+
+**Cevap (Başarılı):**
+```json
+HTTP/1.1 200 OK
+123
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 401 Unauthorized
+Geçersiz kullanıcı adı/şifre
+```
 
 ---
 **KARALİSTENİZDEKİ NUMARALARIN ALIMI**
