@@ -496,7 +496,7 @@ Accept: */*
                 "status"         : "ONAY",
                 "recipient_type" : "BIREYSEL",
                 "consent_date"   : "2022-04-14 13:30:30",
-                "recipient"      : "905311234567",
+                "recipient"      : "905311234567"
                },
                { 
                 "type"           : "ARAMA",
@@ -504,7 +504,7 @@ Accept: */*
                 "status"         : "RET",
                 "recipient_type" : "BIREYSEL",
                 "consent_date"   : "2022-04-14 13:30:30",
-                "recipient"      : "905311234568",
+                "recipient"      : "905311234568"
                },
                { 
                 "type"           : "EPOSTA",
