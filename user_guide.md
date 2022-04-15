@@ -495,16 +495,24 @@ Accept: */*
                 "source"         : "HS_WEB",
                 "status"         : "ONAY",
                 "recipient_type" : "BIREYSEL",
-                "consent_date"   : "2020-11-10 12:57:00",
+                "consent_date"   : "2022-04-14 13:30:30",
                 "recipient"      : "905311234567",
                },
                { 
-                "type"           : "MESAJ",
+                "type"           : "ARAMA",
                 "source"         : "HS_MESAJ",
                 "status"         : "RET",
                 "recipient_type" : "BIREYSEL",
-                "consent_date"   : "2020-11-10 13:30:30",
+                "consent_date"   : "2022-04-14 13:30:30",
                 "recipient"      : "905311234568",
+               },
+               { 
+                "type"           : "EPOSTA",
+                "source"         : "HS_MESAJ",
+                "status"         : "RET",
+                "recipient_type" : "BIREYSEL",
+                "consent_date"   : "2022-04-14 13:30:30",
+                "recipient"      : "arge@verimor.com.tr"
                }
               ]
 }
@@ -517,7 +525,7 @@ Accept: */*
 * status: İzin durumu (zorunlu). Alabileceği değerler: "ONAY" "RET"
 * recipient_type: Alıcı türü (zorunlu). Alabileceği değerler: "BIREYSEL" "TACIR"
 * source: İzin alınma tarihi (zorunlu).
-* recipient: Alıcı telefon numarası (zorunlu).
+* recipient: Alıcı telefon numarası ya da e-posta adresi (zorunlu).
 
 **Cevap:**
 ```json
