@@ -54,7 +54,7 @@ public class VerimorSms {
         String payload = gson.toJson(smsIstegi);
 
         try {
-            URL url = new URL("http://sms.verimor.com.tr/v2/send.json");
+            URL url = new URL("https://sms.verimor.com.tr/v2/send.json");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setDoInput(true);

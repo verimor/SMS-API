@@ -8,7 +8,7 @@
 function queryCredits(){
   $username="xxxx"; // https://oim.verimor.com.tr/sms_settings/edit adresinden öğrenebilirsiniz.
   $password=urlencode("xxxx"); // https://oim.verimor.com.tr/sms_settings/edit adresinden belirlemeniz gerekir.
-  $url= "http://sms.verimor.com.tr/v2/balance?username=$username&password=$password";
+  $url= "https://sms.verimor.com.tr/v2/balance?username=$username&password=$password";
   $ch = curl_init($url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   $http_response = curl_exec($ch);

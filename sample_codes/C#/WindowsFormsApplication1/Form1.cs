@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
 
             try
             {
-                string campaign_id = wc.UploadString("http://sms.verimor.com.tr/v2/send.json", payload);
+                string campaign_id = wc.UploadString("https://sms.verimor.com.tr/v2/send.json", payload);
                 MessageBox.Show("Mesaj gönderildi, kampanya id: " + campaign_id);
             }
             catch (WebException ex) // 400 hatalarında response body'de hatanın ne olduğunu yakalıyoruz

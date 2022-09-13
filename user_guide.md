@@ -37,7 +37,7 @@ Smsapi gönderim için iki yöntemi destekler. Bunlar **HTTP(S) GET** (Plain de 
 Aşağıdaki örnekte olduğu gibi bir URL çağırılır.
 
 **Örnek:**
-> http://sms.verimor.com.tr/v2/send?username=908501234567&password=xxxxxxx&source_addr=BASLIGIM&msg=deneme12&dest=905311234567,905319876543&datacoding=0&valid_for=2:00
+> https://sms.verimor.com.tr/v2/send?username=908501234567&password=xxxxxxx&source_addr=BASLIGIM&msg=deneme12&dest=905311234567,905319876543&datacoding=0&valid_for=2:00
 
 * username: Verimor hesabınızın kullanıcı adı. (zorunlu)
 * password: API şifreniz. (zorunlu)
@@ -70,7 +70,7 @@ Gönderim başarısızsa; cevap olarak “HTTP/1.1 400 Bad Request” mesajı ve
 Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
 
 ```json
-POST http://sms.verimor.com.tr/v2/send.json
+POST https://sms.verimor.com.tr/v2/send.json
 Host: sms.verimor.com.tr
 Content-Type: application/json
 Accept: */*
@@ -118,7 +118,7 @@ HTTP/1.1 200 OK
 İleri tarihli mesaj gönderimini iptal etmek için aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
 
 ```json
-POST http://sms.verimor.com.tr/v2/cancel/20121
+POST https://sms.verimor.com.tr/v2/cancel/20121
 Host: sms.verimor.com.tr
 Content-Type: application/json
 Accept: */*
@@ -207,16 +207,16 @@ Not: API, sisteminize PUSH bildirimi yaptığında “HTTP/1.1 200 OK” cevabı
 Kampanyaların durumunu GET ile sorarak da alabilirsiniz. Örnekler;
 
 **Örnek (API’nin ürettiği ID ile sorma):**
->http://sms.verimor.com.tr/v2/status?id=20121&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/status?id=20121&username=908501234567&password=xxxx
 
 **Örnek (Custom ID ile sorma):**
->http://sms.verimor.com.tr/v2/status?custom_id=123456789&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/status?custom_id=123456789&username=908501234567&password=xxxx
 
 **Örnek (Cep telefonuna göre sorma):**
->http://sms.verimor.com.tr/v2/status?id=20121&dest=905319876543,905319876544&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/status?id=20121&dest=905319876543,905319876544&username=908501234567&password=xxxx
 
 **Örnek (message_id belirli değerden büyük olanları sorgulama):**
->http://sms.verimor.com.tr/v2/status?id=20121&greater_than=13582302&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/status?id=20121&greater_than=13582302&username=908501234567&password=xxxx
 
 * id: Kampanya’ya API tarafından verilen ID’dir. id veya custom_id zorunludur.
 * custom_id: Kampanya’ya sizin tarafınızdan verilen ID’dir. id veya custom_id zorunludur.
@@ -309,10 +309,10 @@ Accept: */*
 Gelen SMS’lerinizi GET ile sorarak da alabilirsiniz. Örnekler;
 
 **Örnek (Tarih aralığına göre sorma):**
->http://sms.verimor.com.tr/v2/inbound_messages?from_time=2017-01-01 09:00:00&to_time=2017-01-01 12:00:00&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/inbound_messages?from_time=2017-01-01 09:00:00&to_time=2017-01-01 12:00:00&username=908501234567&password=xxxx
 
 **Örnek (message_id belirli değerden büyük olanları sorgulama):**
->http://sms.verimor.com.tr/v2/inbound_messages?greater_than=13582302&username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/inbound_messages?greater_than=13582302&username=908501234567&password=xxxx
 
 * from_time: Sorgulanacak zaman aralığının başlangıcı
 * to_time: Sorgulanacak zaman aralığının bitişi
@@ -356,7 +356,7 @@ HTTP/1.1 200 OK
 Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
 
 **Örnek:**
->http://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/headers?username=908501234567&password=xxxx
 
 **Cevap (Başarılı):**
 ```json
@@ -396,7 +396,7 @@ Geçersiz kullanıcı adı/şifre
 Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
 
 **Örnek:**
->http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&offset=0&limit=100
+>https://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&offset=0&limit=100
 
 **Cevap (Başarılı):**
 
@@ -433,7 +433,7 @@ Geçersiz kullanıcı adı/şifre
 Aşağıdaki örnekte olduğu gibi HTTP POST ile URL çağrılır
 
 **Örnek:**
->POST http://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&phones=905444876543,905335876543
+>POST https://sms.verimor.com.tr/v2/blacklists?username=908501234567&password=xxxx&phones=905444876543,905335876543
 
 **Cevap (Başarılı):**
 
@@ -454,7 +454,7 @@ Invalid phone number: 123456
 Aşağıdaki örnekte olduğu gibi URL, DELETE metoduyla çağrılır
 
 **Örnek:**
->DELETE http://sms.verimor.com.tr/v2/blacklists/905444876543,905335876543?username=908501234567&password=xxxx
+>DELETE https://sms.verimor.com.tr/v2/blacklists/905444876543,905335876543?username=908501234567&password=xxxx
 
 **Cevap (Başarılı):**
 
@@ -480,7 +480,7 @@ Ticari ileti göndermek için markalarınızı İYS'ye (İleti Yönetim Sistemi)
 Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
 
 ```json
-POST http://sms.verimor.com.tr/v2/iys_consents.json
+POST https://sms.verimor.com.tr/v2/iys_consents.json
 Host: sms.verimor.com.tr
 Content-Type: application/json
 Accept: */*
