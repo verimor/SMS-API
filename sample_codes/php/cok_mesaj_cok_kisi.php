@@ -17,7 +17,7 @@ function sendSMS($source_addr, $messages){
     "messages" => $messages
   );
 
-  $ch = curl_init('http://sms.verimor.com.tr/v2/send.json');
+  $ch = curl_init('https://sms.verimor.com.tr/v2/send.json');
   curl_setopt_array($ch, array(
       CURLOPT_POST => TRUE,
       CURLOPT_RETURNTRANSFER => TRUE,

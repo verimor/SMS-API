@@ -22,7 +22,7 @@ jsonString = "{" &_
   " }" &_
   " ]" &_
   "}"
-postUrl = "http://sms.verimor.com.tr/v2/send.json"
+postUrl = "https://sms.verimor.com.tr/v2/send.json"
 Set xml = Server.CreateObject("Microsoft.XMLHTTP")
 xml.Open "POST", postUrl, false
 xml.setRequestHeader "Content-Type", "application/json"
