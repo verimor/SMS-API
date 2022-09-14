@@ -376,7 +376,7 @@ Geçersiz kullanıcı adı/şifre
 Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
 
 **Örnek:**
->http://sms.verimor.com.tr/v2/balance?username=908501234567&password=xxxx
+>https://sms.verimor.com.tr/v2/balance?username=908501234567&password=xxxx
 
 **Cevap (Başarılı):**
 ```json
