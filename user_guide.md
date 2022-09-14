@@ -542,7 +542,7 @@ Daha sonra istenirse, "İYS İZİNLERİ RAPORU" başlığı altındaki döküman
 Gönderilen İYS izinleri ve İYS günlük vatandaş izin değişiklikleri için kampanyalar oluşturulur. Bu kampanyalar bu servisi kullanarak görülebilir.
 
 **Örnek:**
->GET http://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100
+>GET https://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100
 
 **Cevap (Başarılı):**
 
@@ -577,7 +577,7 @@ HTTP/1.1 200 OK
 * source: Alabileceği değerler list, csv, api, sms, web, iys
 
 **Örnek (kaynağı İYS olanları sorgulama):**
->GET http://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100&source=iys
+>GET https://sms.verimor.com.tr/v2/iys/campaigns?username=908501234567&password=xxxx&offset=0&limit=100&source=iys
 
 ----
 **İYS İZİNLERİ RAPORU**
@@ -585,7 +585,7 @@ HTTP/1.1 200 OK
 Gönderilen İYS izinleri ve İYS günlük vatandaş izin değişikliklerini kampanya id'si ile sorgulayabilirsiniz.
 
 **Örnek:**
->GET http://sms.verimor.com.tr/v2/iys/campaigns/IYS_CAMPAIGN_ID/consents?username=908501234567&password=xxxx&offset=0&limit=100
+>GET https://sms.verimor.com.tr/v2/iys/campaigns/IYS_CAMPAIGN_ID/consents?username=908501234567&password=xxxx&offset=0&limit=100
 
 **Cevap (Başarılı):**
 
