@@ -148,7 +148,7 @@ Smsapi gönderim raporlarını iki şekilde teslim eder. Bunlar PUSH ve GET yön
 
 Push yönteminde mesajın durumu ile ilgili bilgi (teslim edildi, zaman aşımı, numara hatalı vb.) alınır alınmaz [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
 ```json
-POST http://sizin.adresiniz.com.tr/sms_push
+POST https://sizin.adresiniz.com.tr/sms_push
 Host: sizin.adresiniz.com.tr
 Content-Type: application/json
 Accept: */*
@@ -277,7 +277,7 @@ Smsapi hesabınıza gelen sms’leri iki farklı yöntemle teslim edebilir. Bunl
 **PUSH ile Gelen SMS Alımı** <br/>
 Push yönteminde hesabınıza bir mesaj gelir gelmez [OİM üzerinden](https://oim.verimor.com.tr/sms_settings/edit) daha önce belirlediğiniz bir URL tetiklenir. Aşağıdaki gibi bir JSON POST edilir:
 ```json
-POST http://sizin.adresiniz.com.tr/sms_push
+POST https://sizin.adresiniz.com.tr/sms_push
 Host: sizin.adresiniz.com.tr
 Content-Type: application/json
 Accept: */*
@@ -630,7 +630,7 @@ Hergün gün sonunda vatandaşın İYS kanalları (E-Devlet, İYS Web/Mobil/Ça�
 Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
 
 ```json
-POST http://sizin.adresiniz.com.tr/iys_campaign_push
+POST https://sizin.adresiniz.com.tr/iys_campaign_push
 Host: sizin.adresiniz.com.tr
 Content-Type: application/json
 Accept: */*
