@@ -16,11 +16,13 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
 * [GELEN SMS ALIMI](#gelen-sms-alimi)
 * [SMS BAŞLIK LİSTESİ ALIMI](#sms-ba%C5%9Flik-li%CC%87stesi%CC%87-alimi)
+* [SMS KALAN KREDİ SORGULAMA](#sms-kalan-kredi%CC%87-sorgulama)
 * [KARALİSTENİZDEKİ NUMARALARIN ALIMI](#karali%CC%87steni%CC%87zdeki%CC%87-numaralarin-alimi)
 * [KARALİSTENİZE NUMARA EKLENMESİ](#karali%CC%87steni%CC%87ze-numara-eklenmesi%CC%87)
 * [KARALİSTENİZDEKİ NUMARANIN SİLİNMESİ](#karali%CC%87steni%CC%87zdeki%CC%87-numaranin-si%CC%87li%CC%87nmesi%CC%87)
 * [İYS İZNİ GÖNDERİMİ](#i%CC%87ys-i%CC%87zni%CC%87-g%C3%B6nderi%CC%87mi%CC%87)
 * [İYS GÜNLÜK VATANDAŞ RAPOR ALIMI](#i%CC%87ys-g%C3%BCnl%C3%BCk-vatanda%C5%9F-rapor-alimi)
+* [İYS KAMPANLARINI LİSTELEME](#i̇ys-kampanlarini-li̇steleme)
 * [İYS İZİNLERİ RAPORU](#i%CC%87ys-i%CC%87zi%CC%87nleri%CC%87-raporu)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
@@ -368,6 +370,25 @@ HTTP/1.1 401 Unauthorized
 Geçersiz kullanıcı adı/şifre
 ```
 
+---
+**SMS KALAN KREDİ SORGULAMA**
+---
+Aşağıdaki örnekte olduğu gibi HTTP GET ile URL çağırılır.
+
+**Örnek:**
+>http://sms.verimor.com.tr/v2/balance?username=908501234567&password=xxxx
+
+**Cevap (Başarılı):**
+```json
+HTTP/1.1 200 OK
+123
+```
+
+**Cevap (Başarısız):**
+```json
+HTTP/1.1 401 Unauthorized
+Geçersiz kullanıcı adı/şifre
+```
 
 ---
 **KARALİSTENİZDEKİ NUMARALARIN ALIMI**
@@ -474,16 +495,24 @@ Accept: */*
                 "source"         : "HS_WEB",
                 "status"         : "ONAY",
                 "recipient_type" : "BIREYSEL",
-                "consent_date"   : "2020-11-10 12:57:00",
-                "recipient"      : "905311234567",
+                "consent_date"   : "2022-04-14 13:30:30",
+                "recipient"      : "905311234567"
                },
                { 
-                "type"           : "MESAJ",
+                "type"           : "ARAMA",
                 "source"         : "HS_MESAJ",
                 "status"         : "RET",
                 "recipient_type" : "BIREYSEL",
-                "consent_date"   : "2020-11-10 13:30:30",
-                "recipient"      : "905311234568",
+                "consent_date"   : "2022-04-14 13:30:30",
+                "recipient"      : "905311234568"
+               },
+               { 
+                "type"           : "EPOSTA",
+                "source"         : "HS_MESAJ",
+                "status"         : "RET",
+                "recipient_type" : "BIREYSEL",
+                "consent_date"   : "2022-04-14 13:30:30",
+                "recipient"      : "arge@verimor.com.tr"
                }
               ]
 }
@@ -496,7 +525,7 @@ Accept: */*
 * status: İzin durumu (zorunlu). Alabileceği değerler: "ONAY" "RET"
 * recipient_type: Alıcı türü (zorunlu). Alabileceği değerler: "BIREYSEL" "TACIR"
 * source: İzin alınma tarihi (zorunlu).
-* recipient: Alıcı telefon numarası (zorunlu).
+* recipient: Alıcı telefon numarası ya da e-posta adresi (zorunlu).
 
 **Cevap:**
 ```json
@@ -725,6 +754,6 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-1:** datacoding=0 veya datacoding=1 gönderimlerde aşağıdaki karakterler 2 karakter sayılır.
 ^ { } \ [ ] ~ | € <br/>
 **Not-2:** Sadece (Ş ş Ğ ğ ç ı İ) harfleri Türkçe olarak kabul edilir ve datacoding=1 olarak gönderilmelidir. Diğer Türkçe karakterleri (Ö ö Ü ü Ç) datacoding=0 olarak gönderebilirsiniz. <br/>
-**Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için rapidssl.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/rapidssl.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
+**Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
 **Not-4:** API ile dakikada 200 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.<br/>
 **Not-5:** API ile Gönderim raporu alabilme request limiti dakikada 20 adettir. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
