@@ -285,8 +285,8 @@ Accept: */*
 [
  {
   "message_id"       : 1234,
-  "type"        : "inbound",
-  "created_at"      : "2017-01-01 09:00:00",
+  "type"             : "inbound",
+  "created_at"       : "2017-01-01 09:00:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905319876543",
   "destination_addr" : "908501234567",
@@ -327,7 +327,7 @@ HTTP/1.1 200 OK
 [
  {
   "message_id"       : 1234,
-  "created_at"      : "2017-01-01T09:00:00.000+03:00,
+  "created_at"       : "2017-01-01T09:00:00.000+03:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905335876543",
   "destination_addr" : "4609",
@@ -338,7 +338,7 @@ HTTP/1.1 200 OK
 ,
  {
   "message_id"       : 1235,
-  "created_at"      : "2017-01-01T09:00:00.000+03:00,
+  "created_at"       : "2017-01-01T09:00:00.000+03:00",
   "network"          : "VODAFONE",
   "source_addr"      : "905444876543",
   "destination_addr" : "908501234567",
