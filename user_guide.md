@@ -286,22 +286,24 @@ Accept: */*
  {
   "message_id"       : 1234,
   "type"        : "inbound",
-  "received_at"      : "2017-01-01 09:00:00",
+  "created_at"      : "2017-01-01 09:00:00",
   "network"          : "TURKCELL",
   "source_addr"      : "905319876543",
   "destination_addr" : "908501234567",
   "keyword"          : "",
   "content"          : "verimor deneme"
+  "received_at"      : "2017-01-01 09:00:00",
  }
 ]
 ```
 * type: Mesajın yönüdür. Gelen sms olduğu için inbound
-* received_at: Mesajın alındığı tarih saat
+* created_at: Mesajın kayıt edildiği tarih saat "Tarih ve saat aralığına göre api isteklerinde filtre yapılacak alan"
 * network: Mesajı gönderen operatör. TURKCELL, TTMOBIL, VODAFONE değerleri olabilir.
 * source_addr: Mesajı gönderen numara
 * destination_addr: Mesajın gönderildiği numara (Verimor abone numarası veya 4 haneli Verimor ücretsiz kısa numarası)
 * keyword: Ortak kullanımlı kısa numaralardaki ayırt edici anahtar kelime. Kısa numaraya değil doğrudan sizin numaranıza gelen sms'lerde boş olur.
 * content: Gelen mesajın tam içeriği
+* received_at: Mesajın alındığı tarih saat
 
 **Not:** API, sisteminize PUSH bildirimi yaptığında “HTTP/1.1 200 OK” cevabı bekler. Bu cevabı alamadığı zaman 5’er dakika bekleyerek 3 kere daha dener. Hala cevap alamazsa bu mesajı tekrar bildirmez.
 
