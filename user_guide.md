@@ -292,7 +292,7 @@ Accept: */*
   "destination_addr" : "908501234567",
   "keyword"          : "",
   "content"          : "verimor deneme"
-  "received_at"      : "2017-01-01 09:00:00",
+  "received_at"      : "2017-01-01 09:00:00"
  }
 ]
 ```
@@ -327,22 +327,24 @@ HTTP/1.1 200 OK
 [
  {
   "message_id"       : 1234,
-  "received_at"      : "2017-01-01T09:00:00.000+03:00",
+  "created_at"      : "2017-01-01T09:00:00.000+03:00,
   "network"          : "TURKCELL",
   "source_addr"      : "905335876543",
   "destination_addr" : "4609",
   "keyword"          : "verimor",
-  "content"          : "verimor deneme"
+  "content"          : "verimor deneme",
+  "received_at"      : "2017-01-01T10:00:00.000+03:00"
  }
 ,
  {
   "message_id"       : 1235,
-  "received_at"      : "2017-01-01T10:00:00.000+03:00",
+  "created_at"      : "2017-01-01T09:00:00.000+03:00,
   "network"          : "VODAFONE",
   "source_addr"      : "905444876543",
   "destination_addr" : "908501234567",
   "keyword"          : "",
-  "content"          : "1234 numaralı siparişim kargoya verildi mi?"
+  "content"          : "1234 numaralı siparişim kargoya verildi mi?",
+  "received_at"      : "2017-01-01T10:00:00.000+03:00"
  }
 ]
 ```
