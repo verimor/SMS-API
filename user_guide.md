@@ -662,7 +662,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_MESSAGE                     | Gönderilecek mesaj verilmemiş.                                                          |
 | -                     | MESSAGE_TOO_LONG                    | Mesaj çok uzun.                                                                         |
 | -                     | INVALID_PERIOD                      | Mesajın geçerlilik süresi (validity period) geçersiz. (1dk. ile 48 saat arasında değil).|
-| -                     | INVALID_DELIVERY_TIME               | "schedule_delivery_time" parametresi geçersiz veya geçmiş tarihe ait.                   |
+| -                     | INVALID_DELIVERY_TIME               | "send_at" parametresi geçersiz veya geçmiş tarihe ait.                   |
 | -                     | INVALID_DATACODING                  | datacoding parametresi hatalı verilmiş.                                                 |
 | -                     | MISSING_IYS_BRAND_CODE              | Ticari gönderimlerde başlığın marka kodunun tanımlanmış olması gereklidir               |
 | -                     | AHS_AUTHORIZATION_ERROR             | Yetkilendirme hatası. Lütfen İYS ile iletişime geçip Verimor'a AHS izni veriniz.        |
