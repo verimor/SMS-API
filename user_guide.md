@@ -767,6 +767,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **UYULMASI GEREKEN KURALLAR**
 ----
 * Kullanmış olduğunuz sms_api'lerde **newline** kullanılmaması gerekir.
+* Kullanmış olduğunuz 
 
 ```json
 POST https://sms.verimor.com.tr/v2/send.json
@@ -785,7 +786,7 @@ Accept: */*
   # Doğru Kullanım
   "messages": [
                { 
-                "msg" : "deneme123",
+                "msg" : "deneme\n123",
                 "dest": "905311234567,905319876543",
                 "id"  : "1234,1235"
                }
