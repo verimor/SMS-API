@@ -775,7 +775,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
   "messages": [
                { 
                 "msg" : "deneme\\n123",
-                "dest": "905311234567",
+                "dest": "905311234567"
                }
               ]
 }
