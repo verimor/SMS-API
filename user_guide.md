@@ -759,44 +759,28 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-1:** datacoding=0 veya datacoding=1 gönderimlerde aşağıdaki karakterler 2 karakter sayılır.
 ^ { } \ [ ] ~ | € <br/>
 **Not-2:** Sadece (Ş ş Ğ ğ ç ı İ) harfleri Türkçe olarak kabul edilir ve datacoding=1 olarak gönderilmelidir. Diğer Türkçe karakterleri (Ö ö Ü ü Ç) datacoding=0 olarak gönderebilirsiniz. <br/>
-**Not-3:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
-**Not-4:** API ile dakikada 200 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.<br/>
-**Not-5:** API ile Gönderim raporu alabilme request limiti dakikada 20 adettir. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
 
 ----
-**UYULMASI GEREKEN KURALLAR**
+**GENEL NOTLAR**
 ----
-* Kullanmış olduğunuz sms_api'lerde **newline** kullanılmaması gerekir.
-* Kullanmış olduğunuz 
+**Not-1:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
+**Not-2:** API ile dakikada 200 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.<br/>
+**Not-3:** API ile Gönderim raporu alabilme request limiti dakikada 20 adettir. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
+**Not-4:** Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\\n" kullanımı gerekmektedir.
 
 ```json
 POST https://sms.verimor.com.tr/v2/send.json
 Host: sms.verimor.com.tr
 Content-Type: application/json
 Accept: */*
- 
+
 {
   "username"    : "908501234567",
   "password"    : "xxxxxxx",
-  "source_addr" : "BASLIGIM",
-  "valid_for"   : "48:00",
-  "send_at"     : "2015-02-20 16:06:00",
-  "custom_id"   : "123456789",
-  "datacoding"  : "0",
-  # Doğru Kullanım
   "messages": [
                { 
-                "msg" : "deneme\n123",
-                "dest": "905311234567,905319876543",
-                "id"  : "1234,1235"
-               }
-              ]
-  # Yanlış Kullanım
-  "messages": [
-               { 
-                "msg" : "deneme  
-                         123",
-                "dest": "905311234567,905319876543",
+                "msg" : "deneme\\n123",
+                "dest": "905311234567",
                 "id"  : "1234,1235"
                }
               ]
