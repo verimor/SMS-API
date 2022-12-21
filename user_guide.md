@@ -769,11 +769,6 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-4:** Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\\n" kullanımı gerekmektedir.
 
 ```json
-POST https://sms.verimor.com.tr/v2/send.json
-Host: sms.verimor.com.tr
-Content-Type: application/json
-Accept: */*
-
 {
   "username"    : "908501234567",
   "password"    : "xxxxxxx",
@@ -781,7 +776,6 @@ Accept: */*
                { 
                 "msg" : "deneme\\n123",
                 "dest": "905311234567",
-                "id"  : "1234,1235"
                }
               ]
 }
