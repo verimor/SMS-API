@@ -766,7 +766,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 **Not-1:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
 **Not-2:** API ile dakikada 200 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.<br/>
 **Not-3:** API ile Gönderim raporu alabilme request limiti dakikada 20 adettir. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
-**Not-4:** Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\\n" kullanımı gerekmektedir.
+**Not-4:** Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\n" kullanımı gerekmektedir.
 
 ```json
 {
@@ -774,7 +774,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
   "password"    : "xxxxxxx",
   "messages": [
                { 
-                "msg" : "deneme\\n123",
+                "msg" : "deneme\n123",
                 "dest": "905311234567"
                }
               ]
