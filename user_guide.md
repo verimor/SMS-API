@@ -680,8 +680,8 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | MISSING_CONSENT                     | Eksik izin durumu.                                                                      |
 | -                     | MISSING_CONSENT_DATE                | Gönderim tipi "BIREYSEL" olanlarda consent_date girilmelidir.                           |
 | -                     | INVALID_RECIPIENT                   | Geçersiz gönderim tipi.                                                                 |
-| -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 50.000 adet mesajdan daha fazlası kabul edilmez.
-
+| -                     | INVALID_JSON                        | Geçersiz JSON kullanımı                                                                 |
+| -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 50.000 adet mesajdan daha fazlası kabul edilmez.|
 
 
 <br/>
