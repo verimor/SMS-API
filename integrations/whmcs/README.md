@@ -6,7 +6,7 @@
 
 **Kurulum ve Kullanım**
 1. Online İşlem Merkezi (OİM) > SMS Hizmeti > SMS Ayarlarım sayfasındaki “API Erişimi” pasif ise aktif hale getiriniz. Güvenlik sebebiyle sunucunuzun IP adresini de girmeniz zorunludur.
-2. Eklenti dosyasını WHMCS sisteminizde bulunan /whmcs/modules/addons/ klasörüne atınız. (Eklenti dosyasını indirmek için [tıklayınız](https://github.com/verimor/SMS-API/raw/master/integrations/whmcs/verimor-whmcs-v8.1.zip).)
+2. Eklenti dosyasını WHMCS sisteminizde bulunan /whmcs/modules/addons/ klasörüne atınız. (Eklenti dosyasını indirmek için [tıklayınız](https://github.com/verimor/SMS-API/raw/master/integrations/whmcs/verimor-whmcs-v8.1-ve-sonrası.zip).)
 3. WHMCS admin panelinizden Kurulum->Eklenti Modülü’nden tüm eklentileri listeleyiniz.
 4. VERİMOR SMS eklentisini listeden bularak aktifleştirerek eklenti izinleri ayarlayınız.
 5. Artık “Eklentiler” sekmesinde “VERİMOR SMS” görüntülenecektir.
