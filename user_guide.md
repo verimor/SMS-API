@@ -11,7 +11,8 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 ----
 **İÇİNDEKİLER** 
 ----
-* [SMS GÖNDERİMİ](#sms-g%C3%B6nderi%CC%87mi%CC%87)
+* [SMS GÖNDERİMİ GET](#sms-g%C3%B6nderi%CC%87mi%CC%87)
+* [SMS GÖNDERİMİ POST](#sms-g%C3%B6nderi%CC%87mi%CC%87)
 * [İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#i%CC%87leri%CC%87-tari%CC%87hli%CC%87-mesaj-g%C3%B6nderi%CC%87mi%CC%87-i%CC%87ptali%CC%87)
 * [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
 * [GELEN SMS ALIMI](#gelen-sms-alimi)
@@ -29,7 +30,7 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [UYULMASI GEREKEN KURALLAR](#uyulmasi-gereken-kurallar)
 
 ----
-**SMS GÖNDERİMİ**
+**SMS GÖNDERİMİ (GET) **
 ----
 Smsapi gönderim için iki yöntemi destekler. Bunlar **HTTP(S) GET** (Plain de denir) ve **HTTP(S) POST JSON**’dır. İkisi de cevabını düz metin olarak döndürür.
 
@@ -66,6 +67,10 @@ INSUFFICIENT_CREDITS
 
 Gönderim başarısızsa; cevap olarak “HTTP/1.1 400 Bad Request” mesajı ve kampanya ID’si yerine hata mesajı döner. “HTTP/1.1 400 Bad Request” mesajı HTTP response header kısmında olup cevap metninde (response body) geçmez.
 
+----
+**SMS GÖNDERİMİ (Json POST - Çoklu) **
+----
+
 **HTTP POST JSON ile SMS Gönderimi** 
 
 Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
@@ -89,6 +94,11 @@ Accept: */*
                 "msg" : "deneme123",
                 "dest": "905311234567,905319876543",
                 "id"  : "1234,1235"
+               },
+               { 
+                "msg" : "test123",
+                "dest": "905317654321",
+                "id"  : "1236"
                }
               ]
 }
@@ -763,10 +773,13 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 ----
 **GENEL NOTLAR**
 ----
-**Not-1:** HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.<br/>
-**Not-2:** API ile dakikada 200 sms paketi (request) gönderebilirsiniz. 1 paket 10 MB büyüklüğünü geçemez. Bu limitler içinde, paketin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaja kadar gönderebilirsiniz. Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.<br/>
-**Not-3:** API ile Gönderim raporu alabilme request limiti dakikada 20 adettir. Request limitini aştığınızda 429 (Too Many Requests) hatası döner.
-**Not-4:** Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\n" kullanımı gerekmektedir.
+* API üzerinden dakikada 240 sms gönderim isteği yapabilirsiniz. 1 isteğin büyüklüğü 10 MB geçemez. Bu limitler dahilinde, isteğin yapısına bağlı olmakla birlikte dakikada 100.000.000 mesaj gönderilebilir.
+* Yoğun OTP gönderimleri için kendi tarafınızda istekleri biriktirip saniyede bir çok alıcılı Json Post sms gönderim isteği yapmalısınız.
+* Request limitlerini aştığınızda 429 (Too Many Requests) hatası döner.
+* Paket boyutu limitini aştığınızda 413 (Request Entity Too Large) hatası döner.
+* API ile Gönderim raporu alabilme request limiti dakikada 20 adettir.
+* HTTPS olarak API’mizi kullanırken SSL bağlanıtısı için kullandığınız kütüphane sisteminizde kök sertifikalar yüklü olmadığından sertifikamızı doğrulamayabilir. Bu sorunu çözmek için lets-encrypt-r3.crt kök sertifika dosyasını [buraya](https://github.com/verimor/SMS-API/blob/master/lets-encrypt-r3.crt) tıklayarak indirip sisteminize kurmalısınız.
+* Mesaj metninde yeni satıra geçiş yapabilmek için json'da (new line) "\n" kullanımı gerekmektedir.
 
 ```json
 {
