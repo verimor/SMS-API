@@ -1,7 +1,7 @@
 
 # **VERİMOR SMS API DÖKÜMANI**
 
-Bu doküman, Verimor SMS API (kısaca Smsapi) ile mesaj gönderiminin nasıl yapılacağını, ileri tarihli gönderimin nasıl iptal edileceğini, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
+Bu doküman, Verimor SMS API ile mesaj gönderiminin nasıl yapılacağını, ileri tarihli gönderimin nasıl iptal edileceğini, gönderim raporunun ve gelen smslerinizin nasıl alınacağını anlatır.
 
 Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 1- Verimor hesabınızın kullanıcı adı (12 haneli telefon numaranız, 908501234567 gibi) <br/>
@@ -11,8 +11,8 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 ----
 **İÇİNDEKİLER** 
 ----
-* [SMS GÖNDERİMİ GET](#sms-g%C3%B6nderi%CC%87mi%CC%87)
-* [SMS GÖNDERİMİ POST](#sms-g%C3%B6nderi%CC%87mi%CC%87)
+* [SMS GÖNDERİMİ GET](#sms-g%C3%B6nderi%CC%87mi%CC%87-get)
+* [SMS GÖNDERİMİ POST](#sms-g%C3%B6nderi%CC%87mi%CC%87-post)
 * [İLERİ TARİHLİ MESAJ GÖNDERİMİ İPTALİ](#i%CC%87leri%CC%87-tari%CC%87hli%CC%87-mesaj-g%C3%B6nderi%CC%87mi%CC%87-i%CC%87ptali%CC%87)
 * [GÖNDERİM RAPORU ALIMI](#g%C3%B6nderi%CC%87m-raporu-alimi)
 * [GELEN SMS ALIMI](#gelen-sms-alimi)
@@ -27,10 +27,10 @@ Smsapi ile sms göndermek için iki bilgiye ihtiyaç vardır: <br/>
 * [İYS İZİNLERİ RAPORU](#i%CC%87ys-i%CC%87zi%CC%87nleri%CC%87-raporu)
 * [HATA KODLARI](#hata-kodlari)
 * [SMS BOY KARAKTER LİMİTLERİ](#sms-boy-karakter-li%CC%87mi%CC%87tleri%CC%87)
-* [UYULMASI GEREKEN KURALLAR](#uyulmasi-gereken-kurallar)
+* [GENEL NOTLAR](#genel-notlar)
 
 ----
-**SMS GÖNDERİMİ (GET) **
+**SMS GÖNDERİMİ (GET)**
 ----
 Smsapi gönderim için iki yöntemi destekler. Bunlar **HTTP(S) GET** (Plain de denir) ve **HTTP(S) POST JSON**’dır. İkisi de cevabını düz metin olarak döndürür.
 
@@ -68,7 +68,7 @@ INSUFFICIENT_CREDITS
 Gönderim başarısızsa; cevap olarak “HTTP/1.1 400 Bad Request” mesajı ve kampanya ID’si yerine hata mesajı döner. “HTTP/1.1 400 Bad Request” mesajı HTTP response header kısmında olup cevap metninde (response body) geçmez.
 
 ----
-**SMS GÖNDERİMİ (Json POST - Çoklu) **
+**SMS GÖNDERİMİ (POST)**
 ----
 
 **HTTP POST JSON ile SMS Gönderimi** 
