@@ -73,7 +73,7 @@ Gönderim başarısızsa; cevap olarak “HTTP/1.1 400 Bad Request” mesajı ve
 
 **HTTP POST JSON ile SMS Gönderimi** 
 
-Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir.
+Aşağıdaki örnekte olduğu gibi bir JSON string POST edilir. Tek isteğin içinde çok kişiye çok mesaj uygulaması yapılabilir.
 
 ```json
 POST https://sms.verimor.com.tr/v2/send.json
