@@ -12,6 +12,7 @@ Zoho CRM, işletmelerin satış, pazarlama ve müşteri destek süreçlerini tek
 - Tekil veya toplu SMS gönderimi: Zoho'daki kişiler ve potansiyel müşterilere (leads/contacts) SMS gönderebilirsiniz.
 - Manuel numara ekleyerek gönderim sağlayabilirsiniz.
 - SMS bakiyenizi görüntüleyebilirsiniz.
+- IYS modülüne sahipseniz ticari gönderim sağlayabilirsiniz.
 
 ## Kurulum
 1. OIM içerisinde ([SMS Ayarlarım](https://oim.verimor.com.tr/sms_settings/edit)) ekranında
@@ -36,7 +37,10 @@ Not: Eklenti kurulumunda Zoho tarafında gerekli izinleri vermeniz istenecektir;
 ## Örnek İş Akışı
 1. Zoho içinde Lead veya Contact listesine gidin
 2. SMS göndermek istediğiniz verileri seçin
-3. Verimor SMS Gönder butonlarından birini seçin ve SMS gönderimi ekranından gönderimi sağlayın.
+3. Verimor SMS Gönder butonlarından birini seçin ve SMS gönderimi ekranını açın.
+4. Gönderici başlığı seçin. Ticari gönderim için IYS başlığınız ile ilişkili başlığı seçmelisiniz
+5. Gönderim Tipini seçin
+6. SMS içeriğini girin ve gönderin.
 
 ## Destek
 Kurulum veya gönderim sırasında sorun yaşarsanız lütfen Verimor destek ekibi ile iletişime geçin veya GitHub deposundaki dökümantasyona bakın.
