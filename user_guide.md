@@ -692,6 +692,7 @@ SMS gönderirken ve gönderim raporu alırken size dönen status sahalarında a�
 | -                     | INVALID_RECIPIENT                   | Geçersiz gönderim tipi.                                                                 |
 | -                     | INVALID_JSON                        | Geçersiz JSON kullanımı                                                                 |
 | -                     | MESSAGE_COUNT_LIMIT_EXCEEDED        | Maksimum mesaj sayısına ulaşıldı. Bir seferde maksimum 50.000 adet mesajdan daha fazlası kabul edilmez.|
+| -                     | NUMERIC_SOURCE_ADDRESS_NOT_ALLOWED  | BTK kararı gereği API üzerinden gönderilen kampanyalarda alfanumerik olmayan başlıklar kullanılamaz.|
 
 
 <br/>
